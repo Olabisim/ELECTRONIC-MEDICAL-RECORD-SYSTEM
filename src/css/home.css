@@ -32,6 +32,7 @@ html {
   box-shadow: 0 6px 30px -10px #4a74c9;
   overflow: hidden;
   transform: translateX(0);
+  margin-bottom: 30px;
 }
 
 
