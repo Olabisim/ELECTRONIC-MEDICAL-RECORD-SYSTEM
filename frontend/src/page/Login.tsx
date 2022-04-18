@@ -29,15 +29,15 @@ export const Login = () => {
         return(
                 <>
 
-                <div className="al"></div>
+                <div className="Login_al"></div>
 
-                <div className="container">
+                <div className="Login_container">
                         
-                        <div className="header">Sign In</div>
-                        <div className='info'>*Click on the input boxes</div>
+                        <div className="Login_header">Sign In</div>
+                        <div className='Login_info'>*Click on the input boxes</div>
                         <input 
                                 ref={username} 
-                                className={`text inc2 ${!toggle && 'rect2'}`}
+                                className={`Login_text Login_inc2 ${!toggle && 'Login_rect2'}`}
                                 onFocus={handle2}
                                 onClick={handle2}
                                 type="text" 
@@ -48,7 +48,7 @@ export const Login = () => {
 
                         <input 
                         ref={password} 
-                        className={`pass inc1 ${toggle && 'rect1'}`} 
+                        className={`Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
                         onFocus={handle1}
                         onClick={handle1}
                         type="pass" name="Password" placeholder='Password' 
@@ -60,7 +60,7 @@ export const Login = () => {
                         </Link>
 
                         <svg width="390" height="549" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" ref={rect} className={`${toggle}`} >
-                                <rect id='rect' className='rect1'   x="45px"  y="300px"   rx="27" ry="27" width="300px" height="50px" style={{stroke: '#fff', strokeWidth: '1px', fill: '#000'}} />
+                                <rect id='rect' className='Login_rect1'   x="45px"  y="300px"   rx="27" ry="27" width="300px" height="50px" style={{stroke: '#fff', strokeWidth: '1px', fill: '#000'}} />
                         </svg>
                 </div>
                 

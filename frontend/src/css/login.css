@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100");
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
-.container {
+.Login_container {
   width: 390px;
   height: 549px;
   background: #000;
@@ -16,11 +16,11 @@
   -moz-box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
 }
-.container svg {
+.Login_container svg {
   position: absolute;
 }
 
-.rect1 {
+.Login_rect1 {
   z-index: 1;
   stroke-dasharray: 197 509;
   stroke-dashoffset: -729;
@@ -28,7 +28,7 @@
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.rect2 {
+.Login_rect2 {
   z-index: 1;
   stroke-dasharray: 197 509;
   stroke-dashoffset: -1058;
@@ -36,7 +36,7 @@
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.text {
+.Login_text {
   position: absolute;
   margin-top: 254px;
   border: none;
@@ -51,12 +51,12 @@
   padding-top: 21px;
   transition: all 600ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
-.text:focus {
+.Login_text:focus {
   outline-width: 0;
   font-size: 16px;
 }
 
-.pass {
+.Login_pass {
   position: absolute;
   margin-top: 305px;
   border: none;
@@ -71,7 +71,7 @@
   padding-top: 21px;
   transition: all 600ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
-.pass:focus {
+.Login_pass:focus {
   outline-width: 0;
   font-size: 16px;
 }
@@ -100,7 +100,7 @@ button:focus {
   outline-width: 0;
 }
 
-.header {
+.Login_header {
   position: absolute;
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -110,7 +110,7 @@ button:focus {
   margin-top: 81px;
 }
 
-.info {
+.Login_info {
   position: absolute;
   text-align: center;
   font-family: "Roboto", sans-serif;
