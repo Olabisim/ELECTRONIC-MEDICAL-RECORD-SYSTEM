@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './page/Home'
 import { Staff } from './page/Staff'
+import { Login } from './page/Login'
 import { Student } from './page/Student'
 import { Form1 } from './components/students/Form1'
 import { Form2 } from './components/students/Form2'
@@ -18,6 +19,7 @@ function App() {
                         <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/staff"  element={<Staff />} />
+                                <Route path="/login"  element={<Login />} />
                                 <Route path="/student"  element={<Student />} />
                                 <Route path="/student/first"  element={<Form1 />} />
                                 <Route path="/student/second"  element={<Form2 />} />
