@@ -1,6 +1,22 @@
 [
   {
     "surname": "Taiwo",
-    "otherNames": ["Daniel", "Mayowa"]
+    "otherNames": "Daniel Mayowa",
+    "yearOfAdmission": "2018",
+    "faculty": "Sciences",
+    "department": "Computer Science",
+    "religion": "Christianity",
+    "telPhone": "08087016021",
+    "homeAddress": "17b somewhere, somewhere, somewhere",
+    "gender": "Male",
+    "dateOfBirth": "1998-09-02",
+    "nationality": "Nigerian",
+    "ethnicGroup": "Yoruba",
+    "maritalStatus": "Single",
+    "guardianName": "Mr Taiwo",
+    "guardianOffAdd": "17b somewhere, somewhere, somewhere",
+    "guardianTelNum": "08002846122",
+    "guardianResAdd": "17b somewhere, somewhere, somewhere",
+    "guardianRel": "Parent"
   }
 ]
