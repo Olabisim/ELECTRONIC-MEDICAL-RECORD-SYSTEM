@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 import '../../css/input.css'
 
+
 export const Form2 = () => {
         return (
                 <div>
