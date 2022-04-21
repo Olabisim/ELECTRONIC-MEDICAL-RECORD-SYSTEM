@@ -15,7 +15,24 @@ const getStudents = async (req, res) => {
       message: err,
     });
   }
-  //   console.log(students);
 };
 
-export { getStudents };
+const createStudent = async (req, res) => {
+  try {
+    const newStudent = await Student.create(req.body);
+
+    res.status(201).json({
+      status: "success",
+      data: {
+        student: newStudent,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
+
+export { getStudents, createStudent };
