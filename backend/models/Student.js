@@ -1,34 +1,3 @@
-// STUDENT'S DATA
-
-// surname
-// other names
-// year of admission
-// faculty
-// department
-// religion
-// date
-// Home Address
-// sex
-// Date Of Virth
-// Age
-// nationality
-// ethnic group
-// marital status
-
-// father details
-// name
-// office address
-// father's tel. No.:
-// Home address
-// Mother's Tel No.:
-
-// LOCAL GUARDIAN
-// name
-// relationship
-// office address
-// tel no
-// residence
-
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
@@ -59,15 +28,20 @@ const studentSchema = new Schema({
     type: String,
     required: true,
   },
+  telPhone: {
+    type: "String",
+    required: true,
+  },
   date: {
-    type: Date.now(),
+    type: Date,
+    default: Date.now(),
   },
   homeAddress: {
-    tyoe: String,
+    type: String,
     required: true,
     trim: true,
   },
-  sex: {
+  gender: {
     type: String,
     required: [true, "A student has to have a gender"],
   },
