@@ -8,7 +8,7 @@
 .Login_container {
   width: 390px;
   height: 549px;
-  background: #000;
+  background: blue;
   margin-left: auto;
   margin-right: auto;
   margin-top: 11px;
@@ -40,9 +40,9 @@
   position: absolute;
   margin-top: 254px;
   border: none;
-  background: #000;
+  background: blue;
   margin-left: 101px;
-  color: gray;
+  color: white;
   width: 196px;
   height: 44px;
   padding-left: 3px;
@@ -60,9 +60,9 @@
   position: absolute;
   margin-top: 305px;
   border: none;
-  background: #000;
+  background: blue;
   margin-left: 101px;
-  color: gray;
+  color: white;
   width: 196px;
   height: 44px;
   padding-left: 3px;
@@ -82,7 +82,7 @@ button {
   width: 149px;
   height: 43px;
   border: 1px solid #fff;
-  background: #000;
+  background: blue;
   font-family: "Roboto", sans-serif;
   color: #fff;
   font-size: 16px;
@@ -93,7 +93,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  color: #000;
+  color: blue;
   background: #fff;
 }
 button:focus {

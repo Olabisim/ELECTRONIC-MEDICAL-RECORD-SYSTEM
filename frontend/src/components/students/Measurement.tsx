@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export const Measurement = () => {
         return (
                 <div>
-                        <h2>MEASUREMENT\</h2>
+                        <h2>MEASUREMENT</h2>
 
                         <form>
                                 <input type="text" placeholder="Height" />
@@ -25,7 +25,7 @@ export const Measurement = () => {
                         
                         <Link to="/student">
                         
-                                <button>next</button>
+                                <button style={{marginTop: 0}}>complete</button>
                                 
                         </Link>
                 </div>

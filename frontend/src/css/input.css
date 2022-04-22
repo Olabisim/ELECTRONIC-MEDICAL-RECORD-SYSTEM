@@ -38,12 +38,12 @@ outline: 0;
 
 input:focus,
 input:valid {
-border-color: #00dd22;
+border-color: blue;
 }
 
 input:focus ~ label,
 input:valid ~ label {
 font-size: 14px;
 top: -24px;
-color: #00dd22;
+color: blue;
 }

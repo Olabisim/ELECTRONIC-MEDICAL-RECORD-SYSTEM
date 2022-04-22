@@ -60,7 +60,7 @@ export const Login = () => {
                         </Link>
 
                         <svg width="390" height="549" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" ref={rect} className={`${toggle}`} >
-                                <rect id='rect' className='Login_rect1'   x="45px"  y="300px"   rx="27" ry="27" width="300px" height="50px" style={{stroke: '#fff', strokeWidth: '1px', fill: '#000'}} />
+                                <rect id='rect' className='Login_rect1'   x="45px"  y="300px"   rx="27" ry="27" width="300px" height="50px" style={{stroke: '#fff', strokeWidth: '1px', fill: 'blue'}} />
                         </svg>
                 </div>
                 

@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom"
-
+import '../../css/select_option.css'
 
 export const HistoryForm = () => {
 
@@ -11,12 +11,31 @@ export const HistoryForm = () => {
 
                         <h2>HISTORY (Personal & Family) </h2>
 
+                        {/* 
+
+                        <div class="can-toggle">
+                                <input id="a" type="checkbox">
+                                <label for="a">
+                                <div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                </label>
+                        </div> 
+
+                        */}
+
                         <form>
-                                <label>Any nervous disease?</label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+
+                                <div>
+                                        
+                                        <h4>Any nervous disease?</h4>
+
+                                        <div className="can-toggle">
+                                                <input id="a" type="checkbox" />
+                                                <label htmlFor="a">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+                                        
+                                </div>
 
                                 <label>Asthma, blood-splitting, pleurisy of any disease of chest or lungs?</label>
                                 <select name="cars" id="cars">
