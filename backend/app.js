@@ -4,13 +4,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import express from "express";
-import dotenv from "dotenv";
 
 import studentRoutes from "./routes/students.js";
-
-dotenv.config({
-  path: "./config.env",
-});
 
 const app = express();
 
