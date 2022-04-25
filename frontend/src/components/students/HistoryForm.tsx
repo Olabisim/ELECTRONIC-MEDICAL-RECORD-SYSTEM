@@ -11,22 +11,11 @@ export const HistoryForm = () => {
 
                         <h2>HISTORY (Personal & Family) </h2>
 
-                        {/* 
-
-                        <div class="can-toggle">
-                                <input id="a" type="checkbox">
-                                <label for="a">
-                                <div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                </label>
-                        </div> 
-
-                        */}
-
                         <form>
 
                                 <div>
                                         
-                                        <h4>Any nervous disease?</h4>
+                                        <span>Any nervous disease?</span>
 
                                         <div className="can-toggle">
                                                 <input id="a" type="checkbox" />
@@ -34,64 +23,130 @@ export const HistoryForm = () => {
                                                 <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
                                                 </label>
                                         </div>
+
+                                </div>
+                                
+                                <div>
                                         
+                                        <span>Asthma, blood-splitting, pleurisy of any disease of chest or lungs?</span>
+
+                                        <div className="can-toggle">
+                                                <input id="b" type="checkbox" />
+                                                <label htmlFor="b">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+
                                 </div>
 
-                                <label>Asthma, blood-splitting, pleurisy of any disease of chest or lungs?</label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
-                                
-                                <label>Heart trouble of any kind? </label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+                                <div>
+                                        
+                                        <span>Heart trouble of any kind? </span>
 
-                                <label>Jaundice?</label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+                                        <div className="can-toggle">
+                                                <input id="c" type="checkbox" />
+                                                <label htmlFor="c">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
 
-                                <label>Any disease of the kidney or bladder?</label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+                                </div>
 
-                                <label>Any history of rheumatic fever? </label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+                                <div>
+                                        
+                                        <span>Jaundice? </span>
 
-                                <label>Any digestive trouble? </label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+                                        <div className="can-toggle">
+                                                <input id="d" type="checkbox" />
+                                                <label htmlFor="d">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
 
-                                <label>Any other illness, injury or operation? </label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+                                </div>
+
+                                <div>
+                                        
+                                        <span>Any disease of the kidney or bladder? </span>
+
+                                        <div className="can-toggle">
+                                                <input id="e" type="checkbox" />
+                                                <label htmlFor="e">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+
+                                </div>
+
+                                <div>
+                                        
+                                        <span>Any history of rheumatic fever?</span>
+
+                                        <div className="can-toggle">
+                                                <input id="f" type="checkbox" />
+                                                <label htmlFor="f">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+
+                                </div>
+
+                                <div>
+                                        
+                                        <span>Any digestive trouble? </span>
+
+                                        <div className="can-toggle">
+                                                <input id="g" type="checkbox" />
+                                                <label htmlFor="g">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+
+                                </div>
+
+                                <div>
+                                        
+                                        <span>Any other illness, injury or operation? </span>
+
+                                        <div className="can-toggle">
+                                                <input id="h" type="checkbox" />
+                                                <label htmlFor="h">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+
+                                </div>
+
 
                                 <p>Has any of your near relative suffered from</p>
 
-                                <label>Tuberculosis? </label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
 
-                                <label>Nervous disease? (if so give particular) </label>
-                                <select name="cars" id="cars">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                </select>
+                                <div>
+                                        
+                                        <span>Tuberculosis?  </span>
+
+                                        <div className="can-toggle">
+                                                <input id="i" type="checkbox" />
+                                                <label htmlFor="i">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+
+                                </div>
+
+                                <div>
+                                        
+                                        <span>Nervous disease? (if so give particular)   </span>
+
+                                        <div className="can-toggle">
+                                                <input id="j" type="checkbox" />
+                                                <label htmlFor="j">
+                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                </label>
+                                        </div>
+
+                                </div>
+
 
                                 {
                                        female
@@ -99,12 +154,19 @@ export const HistoryForm = () => {
                                        (
                                              <>
                                              
-                                                <label>Have you suffered from disease of the breast or sexual organ? </label>
+                                                <div>
+                                        
+                                                        <span>Have you suffered from disease of the breast or sexual organ? </span>
 
-                                                <select name="cars" id="cars">
-                                                        <option value="yes">yes</option>
-                                                        <option value="no">no</option>
-                                                </select>
+                                                        <div className="can-toggle">
+                                                                <input id="k" type="checkbox" />
+                                                                <label htmlFor="k">
+                                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                                </label>
+                                                        </div>
+
+                                                </div>
+
                                              </>
                                         )   
                                 }
