@@ -8,15 +8,37 @@ export const Measurement = () => {
                         <h2>MEASUREMENT</h2>
 
                         <form>
-                                <input type="text" placeholder="Height" />
-                                <input type="text" placeholder="Weight" />
+                                
+                                <div className="input-field">
+                                        <input type="text" id="Height" required />
+                                        <label htmlFor="Height">Your Height:</label>
+                                </div>
+
+                                
+                                <div className="input-field">
+                                        <input type="text" id="Weight" required />
+                                        <label htmlFor="Weight">Your Weight:</label>
+                                </div>
+                                
                                 <p>Chest</p>
-                                <input type="text" placeholder="Insp" />
-                                <input type="text" placeholder="Exp." />
-                                <input type="text" placeholder="Girth of abdomen" />
+                                <div className="input-field">
+                                        <input type="text" id="Insp" required />
+                                        <label htmlFor="Insp">Your Insp:</label>
+                                </div>
+                                <div className="input-field">
+                                        <input type="text" id="Exp." required />
+                                        <label htmlFor="Exp">Your Exp:</label>
+                                </div>
+                                <div className="input-field">
+                                        <input type="text" id="Girth_of_abdomen" required />
+                                        <label htmlFor="Girth_of_abdomen">Your Girth_of_abdomen:</label>
+                                </div>
 
+                                <div className="input-field">
+                                        <input type="text" placeholder="Does the student appeaer to be healthy and vigorous? " />
+                                        <label htmlFor="Girth_of_abdomen">Your Girth_of_abdomen:</label>
+                                </div>
 
-                                <input type="text" placeholder="Does the student appeaer to be healthy and vigorous? " />
                                 *Fat, Well norished, Thin
                                 State of nutrition:
 
