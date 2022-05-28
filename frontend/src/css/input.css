@@ -7,8 +7,8 @@ form {
 .input-field {
 position: relative;
 width: 250px;
-height: 44px;
-line-height: 44px;
+/* height: 44px;
+line-height: 44px; */
 margin-top: 20px;
 }
 
@@ -46,4 +46,22 @@ input:valid ~ label {
 font-size: 14px;
 top: -24px;
 color: blue;
+}
+
+button {
+        
+        cursor: pointer;
+        background: blue;
+        border: none;
+        box-shadow: 0 6px 30px -10px #4a74c9;
+        overflow: hidden;
+        transform: translateX(0);
+        margin-bottom: 30px;
+        padding: 10px 40px;
+        color: white;
+        text-transform: capitalize;
+        font-size: 22px;
+        letter-spacing: 2px;
+        
+
 }

@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
         return (
-                <div>
+                <div className='parent_home'>
                        
+
 
                        <Link to="/student/first" >
                         <div className='home btn-wrap'>

@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:300,400,700,900");
-.btn-wrap {
+.home.btn-wrap {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-html {
+.parent_home {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,17 +15,16 @@ html {
   font-family: "Muli", Arial, sans-serif;
 }
 
-.lock-on, .cnt, .btn-wrap, .concept-wrap {
+.home.lock-on, .cnt, .btn-wrap, .concept-wrap {
   width: 200px;
   height: 70px;
-}
-
-.concept-wrap {
+} 
+.home.concept-wrap {
   position: relative;
   cursor: pointer;
 }
 
-.btn-wrap {
+.home.btn-wrap {
   cursor: pointer;
   background: blue;
   border-radius: 12px;
@@ -36,23 +35,23 @@ html {
 }
 
 
-.cnt {
+.home.cnt {
   justify-content: space-around;
   box-sizing: border-box;
   padding: 0 25px;
 }
-.cnt .text {
+.home.cnt .text {
   text-align: left;
   font-size: 1.4em;
   margin-right: auto;
   color: #fff;
 }
-.cnt .icon {
+.home.cnt .icon {
   margin-top: 3px;
   color: #fff;
 }
 
-.tap {
+.home.tap {
   width: 140px;
   height: 140px;
   position: absolute;
@@ -68,7 +67,7 @@ html {
   z-index: 3;
 }
 
-.wave {
+.home.wave {
   width: 30px;
   height: 30px;
   background: #4784ff;
@@ -76,7 +75,7 @@ html {
   opacity: 0;
 }
 
-.wave-act {
+.home.wave-act {
   animation: t-wave 599ms cubic-bezier(0.77, 0.06, 0, 0.99) forwards;
 }
 
@@ -105,7 +104,7 @@ html {
     height: 140px;
   }
 }
-.lock-on {
+.home.lock-on {
   background: transparent;
   position: absolute;
   z-index: 11;
