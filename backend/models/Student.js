@@ -85,6 +85,16 @@ const studentSchema = new Schema({
     required: [true, "Guardian relationship is a required field"],
     trim: true,
   },
+  matricNo: {
+    type: String,
+    required: [true, "Guardian relationship is a required field"],
+    trim: true,
+  },
+  password: {
+    type: String,
+    required: [true, "Guardian relationship is a required field"],
+    trim: true,
+  },
 });
 
 export default model("Student", studentSchema);
