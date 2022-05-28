@@ -16,7 +16,7 @@ export const Stats = () => {
                                 </div>
                                 <div className="stats card">
 
-                                        <h2>TOTAL PATIENTS </h2>
+                                        <h2>TOTAL STAFFS </h2>
                                         <h1>1234</h1>
                                         <button className="stats button">view</button>
                                 </div>

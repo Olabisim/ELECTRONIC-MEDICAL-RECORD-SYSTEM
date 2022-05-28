@@ -10,6 +10,8 @@
 }
 .stats.card h2 {
         font-family: 'Josefin Slab', serif;
+        letter-spacing: 2px;
+        word-spacing: 5px;
 }
 .stats.card h1{
         font-family: 'Titan One', cursive;
@@ -31,4 +33,10 @@
         padding: 15px 60px;
         font-family: 'Titan One', cursive;
         text-transform: uppercase;
+        transition: 0.25s;
+}
+.stats.button:hover {
+        background: white;
+        color:blue;
+        border: none;letter-spacing: 10px;
 }
