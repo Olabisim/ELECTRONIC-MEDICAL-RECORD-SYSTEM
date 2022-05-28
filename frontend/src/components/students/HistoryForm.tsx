@@ -16,13 +16,15 @@ export const HistoryForm = () => {
                                 <div>
                                         
                                         <span>Any nervous disease?</span>
+                                        <section>
 
-                                        <div className="can-toggle">
-                                                <input id="a" type="checkbox" />
-                                                <label htmlFor="a">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
+                                                <div className="can-toggle">
+                                                        <input id="a" type="checkbox" />
+                                                        <label htmlFor="a">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
 
                                 </div>
                                 
@@ -179,7 +181,7 @@ export const HistoryForm = () => {
                         
                         <Link to="/student/sixth">
                         
-                                <button>next</button>
+                                <button style={{ marginTop: 0}}>next</button>
                                 
                         </Link>
                 </div>

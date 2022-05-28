@@ -27,7 +27,7 @@ content: attr(data-checked);
 .can-toggle label {
 user-select: none;
 position: relative;
-display: flex;
+display: contents;
 align-items: center;
 }
 .can-toggle label .can-toggle__label-text {
@@ -164,4 +164,8 @@ font-size: 10px;
 }
 .can-toggle.can-toggle--size-small label .can-toggle__switch:hover:after {
 box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+label {
+        display: contents;
 }
