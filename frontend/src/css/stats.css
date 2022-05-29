@@ -35,8 +35,15 @@
         text-transform: uppercase;
         transition: 0.25s;
 }
+.stats.button a{
+        color: white;
+        text-decoration: none;
+}
 .stats.button:hover {
         background: white;
         color:blue;
         border: none;letter-spacing: 10px;
+}
+.stats.button:hover a{
+        color:blue;
 }
