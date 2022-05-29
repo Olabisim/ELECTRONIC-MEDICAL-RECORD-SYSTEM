@@ -81,7 +81,7 @@
   font-size: 16px;
 }
 
-button {
+button.Login {
   position: absolute;
   z-index: 100;
   width: 149px;
@@ -97,11 +97,11 @@ button {
   transition: 0.5s;
   cursor: pointer;
 }
-button:hover {
+button.Login:hover {
   color: blue;
   background: #fff;
 }
-button:focus {
+button.Login:focus {
   outline-width: 0;
 }
 
@@ -134,4 +134,14 @@ button:focus {
   align-items: center;
   /* justify-content: center; */
   height: 100vh;
+}
+
+.Login_info_down {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 513px;
+}
+.Login_info.link {
+  cursor: pointer;
 }

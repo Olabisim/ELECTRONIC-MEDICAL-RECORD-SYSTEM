@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Titan+One&display=swap');
+
+.StudentRegister_main_flex {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+}
+.StudentRegister_main {
+        background: blue;
+        color: white;
+        width: 500px;
+        height: 550px;
+        padding: 15px;
+        margin: 15px;
+}
+.StudentRegister_main p {
+        font-family: 'Josefin Slab', serif;
+        font-size: 35px;
+        padding: 15px;
+}
+.StudentRegister_link a{
+        color: white;
+        font-family: 'Titan One', cursive;
+}

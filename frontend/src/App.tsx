@@ -12,6 +12,7 @@ import { Form4 } from './components/students/Form4'
 import { HistoryForm } from './components/students/HistoryForm'
 import { Measurement } from './components/students/Measurement'
 import { Stats } from './page/Stats';
+import { StudentRegister } from './page/StudentRegister';
 
 
 function App() {
@@ -22,7 +23,10 @@ function App() {
                                 <Route path="/"  element={<Login />} />
 
 
-                                <Route path="/home" element={<Home />} />
+                                <Route path="/home" element={<Stats />} />
+                                {/* <Route path="/student/home" element={<Home />} /> */}
+                                <Route path="/student/login" element={<Login />} />
+                                <Route path="/student/register" element={<StudentRegister />} />
                                 <Route path="/staff"  element={<Staff />} />
                                 <Route path="/student"  element={<Student />} />
                                 <Route path="/student/first"  element={<Form1 />} />
