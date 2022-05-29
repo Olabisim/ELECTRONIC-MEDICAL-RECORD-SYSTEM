@@ -1,4 +1,7 @@
 
+.measurement_main {
+        overflow: hidden;
+}
 .can-toggle {
 position: relative;
 }
@@ -111,6 +114,7 @@ font-size: 14px;
 height: 36px;
 flex: 0 0 134px;
 border-radius: 4px;
+width: 135px;
 }
 .can-toggle label .can-toggle__switch:before {
 left: 67px;

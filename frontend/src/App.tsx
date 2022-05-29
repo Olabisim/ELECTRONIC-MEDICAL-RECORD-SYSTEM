@@ -11,6 +11,7 @@ import { Form3 } from './components/students/Form3'
 import { Form4 } from './components/students/Form4'
 import { HistoryForm } from './components/students/HistoryForm'
 import { Measurement } from './components/students/Measurement'
+import { LoginStudent } from './components/students/LoginStudent'
 import { Stats } from './page/Stats';
 import { StudentRegister } from './page/StudentRegister';
 
@@ -26,6 +27,7 @@ function App() {
                                 <Route path="/home" element={<Stats />} />
                                 {/* <Route path="/student/home" element={<Home />} /> */}
                                 <Route path="/student/login" element={<Login />} />
+                                <Route path="/student/fresh" element={<LoginStudent />} />
                                 <Route path="/student/register" element={<StudentRegister />} />
                                 <Route path="/staff"  element={<Staff />} />
                                 <Route path="/student"  element={<Student />} />
@@ -34,6 +36,8 @@ function App() {
                                 <Route path="/student/third"  element={<Form3 />} />
                                 <Route path="/student/fourth"  element={<Form4 />} />
                                 <Route path="/student/fifth"  element={<HistoryForm />} />
+
+                                {/* to be done by the admin */}
                                 <Route path="/student/sixth"  element={<Measurement />} />
                         </Routes>
                 </Router>

@@ -7,7 +7,7 @@ export const HistoryForm = () => {
         let female:boolean = true
 
         return (
-                <div>
+                <div className="measurement_main">
 
                         <h2>HISTORY (Personal & Family) </h2>
 
@@ -179,7 +179,7 @@ export const HistoryForm = () => {
 
                         </form>
                         
-                        <Link to="/student/sixth">
+                        <Link to="/student/fresh">
                         
                                 <button style={{ marginTop: 0}}>next</button>
                                 
