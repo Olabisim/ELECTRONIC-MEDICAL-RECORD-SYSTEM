@@ -10,28 +10,28 @@ export const Form4 = () => {
                         <form>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="Name" required />
                                         <label htmlFor="Name">Name:</label>
+                                        <input type="text" id="Name" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="relationship" required />
                                         <label htmlFor="relationship">relationship:</label>
+                                        <input type="text" id="relationship" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="office_address" required />
                                         <label htmlFor="office_address">office_address:</label>
+                                        <input type="text" id="office_address" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="Telephone_No" required />
                                         <label htmlFor="Telephone_No">Telephone_No:</label>
+                                        <input type="text" id="Telephone_No" required />
                                 </div> 
                                 
                                 <div className="input-field">
-                                        <input type="text" id="Residence" required />
                                         <label htmlFor="Residence">Residence:</label>
+                                        <input type="text" id="Residence" required />
                                 </div>
                                 
                         </form>

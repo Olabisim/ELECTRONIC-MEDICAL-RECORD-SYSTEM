@@ -11,38 +11,38 @@ export const Form2 = () => {
                                 
                                 
                                 <div className="input-field">
-                                        <input type="text" id="Home_Address" required />
                                         <label htmlFor="Home_Address">Home_Address:</label>
+                                        <input type="text" id="Home_Address" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="sex" required />
                                         <label htmlFor="sex">sex:</label>
+                                        <input type="text" id="sex" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="Date_of_Birth" required />
                                         <label htmlFor="Date_of_Birth">Date_of_Birth:</label>
+                                        <input type="text" id="Date_of_Birth" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="Age" required />
                                         <label htmlFor="Age">Age:</label>
+                                        <input type="text" id="Age" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="nationality" required />
                                         <label htmlFor="nationality">nationality:</label>
+                                        <input type="text" id="nationality" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="ethnic_group" required />
                                         <label htmlFor="ethnic_group">ethnic_group:</label>
+                                        <input type="text" id="ethnic_group" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <input type="text" id="marital_status" required />
                                         <label htmlFor="marital_status">marital_status:</label>
+                                        <input type="text" id="marital_status" required />
                                 </div>
 
                         </form>

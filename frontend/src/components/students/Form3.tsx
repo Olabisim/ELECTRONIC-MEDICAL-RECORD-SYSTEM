@@ -9,21 +9,21 @@ export const Form3 = () => {
                 <div>
                         <form>
                                 <div className="input-field">
-                                        <input type="text" id="name" required />
                                         <label htmlFor="name">Your name:</label>
+                                        <input type="text" id="name" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                      <input type="text" id="office_address" required />
                                         <label htmlFor="office_address">office_address:</label>
+                                      <input type="text" id="office_address" required />
                                 </div>
                                 <div className="input-field">
-                                      <input type="text" id="father_tel_No" required />
                                         <label htmlFor="father_tel_No">father_tel_No:</label>
+                                      <input type="text" id="father_tel_No" required />
                                 </div>
                                 <div className="input-field">
-                                      <input type="text" id="Mother_Tel_No" required />
                                         <label htmlFor="Mother_Tel_No">Mother_Tel_No:</label>  
+                                      <input type="text" id="Mother_Tel_No" required />
                                 </div>
 
                                 

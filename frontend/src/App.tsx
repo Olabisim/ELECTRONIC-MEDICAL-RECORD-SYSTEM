@@ -11,15 +11,19 @@ import { Form3 } from './components/students/Form3'
 import { Form4 } from './components/students/Form4'
 import { HistoryForm } from './components/students/HistoryForm'
 import { Measurement } from './components/students/Measurement'
+import { Stats } from './page/Stats';
 
 
 function App() {
         return (
                 <Router>
                         <Routes>
+                                
+                                <Route path="/"  element={<Stats />} />
+
+
                                 <Route path="/home" element={<Home />} />
                                 <Route path="/staff"  element={<Staff />} />
-                                <Route path="/"  element={<Login />} />
                                 <Route path="/student"  element={<Student />} />
                                 <Route path="/student/first"  element={<Form1 />} />
                                 <Route path="/student/second"  element={<Form2 />} />
