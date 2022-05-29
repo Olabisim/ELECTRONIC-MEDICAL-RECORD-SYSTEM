@@ -6,6 +6,7 @@
 } */
 
 .Login_container {
+  position: relative;
   width: 390px;
   height: 549px;
   background: blue;
@@ -37,8 +38,8 @@
 }
 
 .Login_text {
-  position: absolute;
-  margin-top: 254px;
+  position: absolute;   
+   margin-top: 227px;
   border: none;
   background: blue;
   margin-left: 101px;
@@ -54,6 +55,10 @@
 .Login_text:focus {
   outline-width: 0;
   font-size: 16px;
+}
+.Login_text::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
 }
 
 .Login_pass {
@@ -111,11 +116,22 @@ button:focus {
 }
 
 .Login_info {
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   font-family: "Roboto", sans-serif;
   color: #BDFFBD;
-  font-size: 14px;
-  margin-left: 125px;
-  margin-top: 181px;
+  /* font-size: 14px; */
+  /* margin-left: 125px; */
+  /* margin-top: 181px; */
+}
+
+.Login.button {
+  background: white;
+  color: blue;
+}
+.Login_container_for_flex {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 100vh;
 }

@@ -10,6 +10,7 @@ width: 250px;
 /* height: 44px;
 line-height: 44px; */
 margin-top: 20px;
+border-bottom: 1px solid white;
 }
 
 label {
@@ -30,6 +31,7 @@ padding: 0.5rem 0;
 border-bottom: 2px solid #d3d3d3;
 box-shadow: none;
 color: #111;
+border-bottom: 1px solid white;
 }
 
 input:invalid {
@@ -39,6 +41,8 @@ outline: 0;
 input:focus,
 input:valid {
 border-color: blue;
+border-bottom: 1px solid white;
+background: blue;
 }
 
 input:focus ~ label,
@@ -46,6 +50,7 @@ input:valid ~ label {
 font-size: 14px;
 top: -24px;
 color: blue;
+border-bottom: 1px solid white;
 }
 
 button {

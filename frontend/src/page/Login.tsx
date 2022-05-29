@@ -27,14 +27,14 @@ export const Login = () => {
         }
 
         return(
-                <>
+                <div className="Login_container_for_flex">
 
                 <div className="Login_al"></div>
 
                 <div className="Login_container">
                         
                         <div className="Login_header">Sign In</div>
-                        <div className='Login_info'>*Click on the input boxes</div>
+                        <div className='Login_info'>*Please create an account with LASU Health Center</div>
                         <input 
                                 ref={username} 
                                 className={`Login_text Login_inc2 ${!toggle && 'Login_rect2'}`}
@@ -48,15 +48,16 @@ export const Login = () => {
 
                         <input 
                         ref={password} 
-                        className={`Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
+                        className={`Login_text Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
                         onFocus={handle1}
                         onClick={handle1}
                         type="pass" name="Password" placeholder='Password' 
+                        // style={{borderTop: "1px solid white"}}
                         // value="" 
                         />
 
                         <Link to="/home">
-                                <button>Sign In</button>
+                                <button className='Login button'>Sign In</button>
                         </Link>
 
                         <svg width="390" height="549" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" ref={rect} className={`${toggle}`} >
@@ -64,6 +65,6 @@ export const Login = () => {
                         </svg>
                 </div>
                 
-                </>
+                </div>
         )
 }
