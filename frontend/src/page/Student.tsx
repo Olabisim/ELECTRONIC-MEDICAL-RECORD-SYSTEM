@@ -17,7 +17,7 @@ export const Student = () => {
 
                         </div>
 
-                        <div>
+                        <div className='student_home stats'>
                                 <div className="student_home wrap">
 
                                         <div  className="stats card" style={{background: "green"}}>
@@ -41,7 +41,7 @@ export const Student = () => {
                                         <div className="stats card">
                                                 
                                                 <h2>MEET A DOCTOR </h2>
-                                                <h1></h1>
+                                                {/* <h1></h1> */}
                                                 <button className="stats button">CALL</button>
 
                                         </div>

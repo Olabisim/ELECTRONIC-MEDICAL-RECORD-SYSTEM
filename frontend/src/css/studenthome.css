@@ -9,4 +9,8 @@
 
 .student_home.wrap {
         display: flex;
+        justify-content: center;
+}
+.student_home.stats {
+        width: 80vw;
 }
