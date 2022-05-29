@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
+import bcrypt from "bcryptjs";
 
 const studentSchema = new Schema({
   surname: {
@@ -15,6 +16,7 @@ const studentSchema = new Schema({
   matricNumber: {
     type: String,
     required: [true, "Provide all required information"],
+    unique: true,
   },
   yearOfAdmission: {
     type: String,
@@ -118,6 +120,18 @@ const studentSchema = new Schema({
     default: true,
     select: false,
   },
+});
+
+// pre-save document middleware
+studentSchema.pre("save", async function (next) {
+  // if password was updated
+  if (!this.isModified("password")) return next();
+
+  // hash password with salt round of 12
+  this.password = await bcrypt.hash(this.password, 12);
+
+  // deleting passwordConfirm by setting to undefined
+  this.passwordConfirm = undefined;
 });
 
 export default model("Student", studentSchema);
