@@ -1,0 +1,12 @@
+
+.student_home.main {
+        display: flex;
+}
+.student_home.nav {
+        background: blue;
+        width: 200px;
+}
+
+.student_home.wrap {
+        display: flex;
+}

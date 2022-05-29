@@ -22,8 +22,6 @@ function App() {
                         <Routes>
                                 
                                 <Route path="/"  element={<Login />} />
-
-
                                 <Route path="/home" element={<Stats />} />
                                 {/* <Route path="/student/home" element={<Home />} /> */}
                                 <Route path="/student/login" element={<Login />} />
@@ -36,9 +34,9 @@ function App() {
                                 <Route path="/student/third"  element={<Form3 />} />
                                 <Route path="/student/fourth"  element={<Form4 />} />
                                 <Route path="/student/fifth"  element={<HistoryForm />} />
-
                                 {/* to be done by the admin */}
                                 <Route path="/student/sixth"  element={<Measurement />} />
+                                
                         </Routes>
                 </Router>
         );
