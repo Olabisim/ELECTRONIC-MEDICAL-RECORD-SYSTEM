@@ -5,33 +5,45 @@ form {
         margin-top: 0 !important;
 }
 .input-field {
-position: relative;
+        padding: 10px;
+        /* margin: 5px;     */
+        display: grid;
+/* position: relative;
 width: 250px;
 /* height: 44px;
-line-height: 44px; */
+line-height: 44px;
 margin-top: 20px;
-border-bottom: 1px solid white;
+border-bottom: 1px solid white; */
 }
 
 label {
-position: absolute;
+/* position: absolute;
 top: 0;
 left: 0;
 width: 100%;
 color: #d3d3d3;
 transition: 0.2s all;
-cursor: text;
+cursor: text; */
+    text-transform: uppercase;
+    color: blue;
+    font-weight: 700;
+
 }
 
 input {
-width: 100%;
+        
+    border: none;
+    border-bottom: 2px solid blue;
+    padding: 3px;
+    font-size: 20px;
+/* width: 100%;
 border: 0;
 outline: 0;
 padding: 0.5rem 0;
 border-bottom: 2px solid #d3d3d3;
 box-shadow: none;
 color: #111;
-border-bottom: 1px solid white;
+border-bottom: 1px solid white; */
 }
 
 input:invalid {
@@ -40,17 +52,21 @@ outline: 0;
 
 input:focus,
 input:valid {
-border-color: blue;
+/* border-color: blue;
 border-bottom: 1px solid white;
-background: blue;
+background: blue; */
+    border: none;
+    border-bottom: 2px solid blue;
 }
 
 input:focus ~ label,
 input:valid ~ label {
-font-size: 14px;
+/* font-size: 14px;
 top: -24px;
 color: blue;
-border-bottom: 1px solid white;
+border-bottom: 1px solid white; */
+    border: none;
+    border-bottom: 2px solid blue;
 }
 
 button {
@@ -69,4 +85,19 @@ button {
         letter-spacing: 2px;
         
 
+}
+
+/* styles for form div */
+
+.form_root.main {
+        display: flex;
+        overflow: hidden;
+}
+.form_root.flex_one {
+        width: 50vw;
+        background: blue;
+        height: 100vh;
+}
+.form_root.flex_two {
+        margin: auto;
 }

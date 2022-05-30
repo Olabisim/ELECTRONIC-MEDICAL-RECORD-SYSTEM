@@ -5,9 +5,18 @@ import '../../css/input.css'
 
 export const Form4 = () => {
         return (
-                <div>
-                        <h2>LOCAL GUARDIAN</h2>
-                        <form>
+                <div className="form_root main">
+                        <div className="form_root flex_one">
+                                <h2 className="stats h1 new_font">
+
+                                STEP 2 / 5
+                                </h2>
+                                <img src="../../../form_leaf.svg" alt="designs" />
+                        </div>
+                        
+                        <div className="form_root flex_two">
+
+                                <h2 className="stats h1">YOUR LOCAL GUARDIAN <br /> DETAILS</h2>
                                 
                                 <div className="input-field">
                                         <label htmlFor="Name">Name:</label>
@@ -33,14 +42,22 @@ export const Form4 = () => {
                                         <label htmlFor="Residence">Residence:</label>
                                         <input type="text" id="Residence" required />
                                 </div>
+
                                 
-                        </form>
+                                <Link to="/student/fourth">
                         
-                        <Link to="/student/fifth">
+                                        <button className="stats button">prev</button>
+                                        
+                                </Link>
+
+                                <Link to="/student/fifth">
                         
-                                <button style={{ marginTop: 0}}>next</button>
+                                        <button className="stats button" style={{marginLeft: "65px"}} >next</button>
+                                        
+                                </Link>
                                 
-                        </Link>
+                        </div>
+
                 </div>
         )
 }

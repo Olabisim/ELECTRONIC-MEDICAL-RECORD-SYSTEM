@@ -6,12 +6,19 @@ import '../../css/input.css'
 
 export const Form2 = () => {
         return (
-                <div>
-                        <form>
+                <div className="form_root main">
+                        <div className="form_root flex_one">
+                                <h2 className="stats h1 new_font">
+
+                                STEP 2 / 5
+                                </h2>
+                                <img src="../../../form_leaf.svg" alt="designs" />
+                        </div>
+                        <div className="form_root flex_two">
                                 
                                 
                                 <div className="input-field">
-                                        <label htmlFor="Home_Address">Home_Address:</label>
+                                        <label htmlFor="Home_Address">Home Address:</label>
                                         <input type="text" id="Home_Address" required />
                                 </div>
                                 
@@ -21,7 +28,7 @@ export const Form2 = () => {
                                 </div>
                                 
                                 <div className="input-field">
-                                        <label htmlFor="Date_of_Birth">Date_of_Birth:</label>
+                                        <label htmlFor="Date_of_Birth">Date of Birth:</label>
                                         <input type="text" id="Date_of_Birth" required />
                                 </div>
                                 
@@ -36,22 +43,39 @@ export const Form2 = () => {
                                 </div>
                                 
                                 <div className="input-field">
-                                        <label htmlFor="ethnic_group">ethnic_group:</label>
+                                        <label htmlFor="ethnic_group">ethnic group:</label>
                                         <input type="text" id="ethnic_group" required />
                                 </div>
                                 
                                 <div className="input-field">
-                                        <label htmlFor="marital_status">marital_status:</label>
+                                        <label htmlFor="marital_status">marital status:</label>
                                         <input type="text" id="marital_status" required />
                                 </div>
 
-                        </form>
+                                <div className="input-field">
+                                        <label htmlFor="father_tel_No">father tel No:</label>
+                                      <input type="text" id="father_tel_No" required />
+                                </div>
+
+                                <div className="input-field">
+                                        <label htmlFor="Mother_Tel_No">Mother Tel No:</label>  
+                                      <input type="text" id="Mother_Tel_No" required />
+                                </div>
+
+                                <Link to="/student/fourth">
                         
-                        <Link to="/student/third">
+                                        <button className="stats button">prev</button>
+                                        
+                                </Link>
+
+                                <Link to="/student/fourth">
                         
-                                <button style={{marginTop: 0}}>next</button>
-                                
-                        </Link>
+                                        <button className="stats button" style={{marginLeft: "65px"}} >next</button>
+                                        
+                                </Link>
+
+                        </div>
+                        
                 </div>
         )
 }

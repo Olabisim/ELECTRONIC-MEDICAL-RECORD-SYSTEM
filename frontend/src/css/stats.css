@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Lobster&family=Titan+One&display=swap');
 
 .stats.card {
         background-color: blue;
@@ -13,10 +13,38 @@
         letter-spacing: 2px;
         word-spacing: 5px;
 }
+.stats.card.h2 {
+        font-family: 'Josefin Slab', serif;
+        letter-spacing: 2px;
+        word-spacing: 5px;
+}
 .stats.card h1{
         font-family: 'Titan One', cursive;
         letter-spacing: 3px;
         font-size: 40px;
+}
+.stats.card.h1{
+        font-family: 'Titan One', cursive;
+        letter-spacing: 3px;
+        font-size: 40px;
+}
+.stats.h1{
+        font-family: 'Titan One', cursive;
+        letter-spacing: 3px;
+        font-size: 40px;
+        text-align: center;
+}
+.stats.h1.new_font{
+        
+        font-family: 'Lobster', cursive;
+        letter-spacing: 3px;
+        font-size: 55px;
+        color: white;
+        /* text-align: center; */
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
 }
 
 .stats.parent {
@@ -42,7 +70,8 @@
 .stats.button:hover {
         background: white;
         color:blue;
-        border: none;letter-spacing: 10px;
+        border: none;
+        letter-spacing: 10px;
 }
 .stats.button:hover a{
         color:blue;

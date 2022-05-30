@@ -4,9 +4,15 @@ import '../../css/input.css'
 
 export const Form1 = () => {
         return (
-                <div>
-                        
-                        <form>
+                <div className="form_root main">
+                        <div className="form_root flex_one">
+                                <h2 className="stats h1 new_font">
+
+                                STEP 2 / 5
+                                </h2>
+                                <img src="../../../form_leaf.svg" alt="designs" />
+                        </div>
+                        <div className="form_root flex_two">
                                 
                                 <div className="input-field">
                                         <label htmlFor="name">Your name:</label>
@@ -15,7 +21,7 @@ export const Form1 = () => {
                                 
                                 
                                 <div className="input-field">
-                                        <label htmlFor="other_name">other name:</label>
+                                        <label htmlFor="other_name">other names:</label>
                                       <input type="text" id="other_name" required />
                                 </div>
                                 
@@ -44,14 +50,24 @@ export const Form1 = () => {
                                       <input type="text" id="date" required />
                                 </div>
 
+                                <div className="input-field">
+                                        <label htmlFor="office_address">office address:</label>
+                                      <input type="text" id="office_address" required />
+                                </div>
 
-                        </form>
-
-                        <Link to="/student/second">
+                                <Link to="/student/fourth">
                         
-                                <button className="home button_form">next</button>
+                                        <button className="stats button">prev</button>
+                                        
+                                </Link>
                                 
-                        </Link>
+                                <Link to="/student/second">
+                        
+                                        <button className="stats button" style={{marginLeft: "65px"}} >next</button>
+                                        
+                                </Link>
+                        </div>
+
 
                 </div>
         )

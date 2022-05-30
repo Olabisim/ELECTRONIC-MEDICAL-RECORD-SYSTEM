@@ -15,6 +15,8 @@ export const Student = () => {
 
                         <div className="student_home nav">
 
+                                {/* printed copies */}
+
                         </div>
 
                         <div className='student_home stats'>

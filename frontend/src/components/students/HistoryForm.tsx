@@ -4,14 +4,24 @@ import '../../css/select_option.css'
 
 export const HistoryForm = () => {
 
-        let female:boolean = true
+        let female:boolean = false
+
+        
+        // <h2>HISTORY (Personal & Family) </h2>
 
         return (
-                <div className="measurement_main">
+                <div className="form_root main">
+                <div className="form_root flex_one">
+                        <h2 className="stats h1 new_font">
 
-                        <h2>HISTORY (Personal & Family) </h2>
+                        STEP 2 / 5
+                        </h2>
+                        <img src="../../../form_leaf.svg" alt="designs" />
+                </div>
+                
+                <div className="form_root flex_two">
 
-                        <form>
+                        <h2 className="stats h1">HISTORY (Personal & Family) <br /> </h2>
 
                                 <div>
                                         
@@ -177,13 +187,13 @@ export const HistoryForm = () => {
 
                                 </textarea>
 
-                        </form>
                         
                         <Link to="/student/fresh">
                         
-                                <button style={{ marginTop: 0}}>next</button>
+                                <button className="stats button">next</button>
                                 
                         </Link>
+                </div>
                 </div>
         )
 }
