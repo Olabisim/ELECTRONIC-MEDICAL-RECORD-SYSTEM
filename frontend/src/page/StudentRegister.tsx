@@ -8,6 +8,7 @@ import { Form2 } from '../components/students/Form2';
 import { Form4 } from '../components/students/Form4'
 import { HistoryForm } from '../components/students/HistoryForm'
 import { LoginStudent } from '../components/students/LoginStudent'
+import { PresentComplaints } from '../components/students/PresentComplaints'
 
 export const StudentRegister = () => {
 
@@ -78,6 +79,14 @@ export const StudentRegister = () => {
                                 )
                                 :
                         count === 5
+                                ?
+                                (
+                                        <>
+                                        <PresentComplaints />
+                                        </>
+                                )
+                                :
+                        count === 6
                                 ?
                                 (
                                         <>

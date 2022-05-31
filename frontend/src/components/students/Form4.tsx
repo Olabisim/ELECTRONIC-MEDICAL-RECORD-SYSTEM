@@ -20,7 +20,7 @@ export const Form4 = () => {
                         <div className="form_root flex_one">
                                 <h2 className="stats h1 new_font">
 
-                                STEP {count} / 5
+                                STEP {count} / 6
                                 </h2>
                                 <img src="../../../form_leaf.svg" alt="designs" />
                         </div>
