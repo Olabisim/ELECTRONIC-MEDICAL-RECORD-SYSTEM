@@ -56,7 +56,7 @@ export const LoginStudent = () => {
                         // value="" 
                         />
 
-                        <Link to="/home">
+                        <Link to="/student">
                                 <button className='Login button'>CREATE</button>
                         </Link>
 

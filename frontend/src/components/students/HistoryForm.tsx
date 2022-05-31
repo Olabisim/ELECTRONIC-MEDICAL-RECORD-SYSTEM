@@ -6,7 +6,7 @@ import { incrementCount, decrementCount } from "../../features/student/StudentSl
 
 export const HistoryForm = () => {
 
-        let female:boolean = false
+        let female:boolean = true
 
         const count = useAppSelector(state => state.student.count)
 
@@ -17,7 +17,7 @@ export const HistoryForm = () => {
 
         return (
                 <div className="form_root main">
-                <div className="form_root flex_one">
+                <div className="form_root flex_one" style={{width: '30vw'}}>
                         <h2 className="stats h1 new_font">
 
                         STEP {count} / 6
@@ -29,10 +29,11 @@ export const HistoryForm = () => {
 
                         <h2 className="stats h1">HISTORY (Personal & Family) <br /> </h2>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Any nervous disease?</span>
-                                        <section>
+
+                                        <section className="arrangement_inside">
 
                                                 <div className="can-toggle">
                                                         <input id="a" type="checkbox" />
@@ -44,125 +45,139 @@ export const HistoryForm = () => {
 
                                 </div>
                                 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Asthma, blood-splitting, pleurisy of any disease of chest or lungs?</span>
+                                        
+                                        <section className="arrangement_inside">
 
-                                        <div className="can-toggle">
-                                                <input id="b" type="checkbox" />
-                                                <label htmlFor="b">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
+                                                <div className="can-toggle">
+                                                        <input id="b" type="checkbox" />
+                                                        <label htmlFor="b">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                                
+                                        </section>
 
                                 </div>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Heart trouble of any kind? </span>
 
-                                        <div className="can-toggle">
-                                                <input id="c" type="checkbox" />
-                                                <label htmlFor="c">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
+                                        <section className="arrangement_inside">
+
+                                                <div className="can-toggle">
+                                                        <input id="c" type="checkbox" />
+                                                        <label htmlFor="c">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
 
                                 </div>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Jaundice? </span>
-
-                                        <div className="can-toggle">
-                                                <input id="d" type="checkbox" />
-                                                <label htmlFor="d">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
-
+                                        
+                                        <section className="arrangement_inside">
+                                                <div className="can-toggle">
+                                                        <input id="d" type="checkbox" />
+                                                        <label htmlFor="d">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
                                 </div>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Any disease of the kidney or bladder? </span>
-
-                                        <div className="can-toggle">
-                                                <input id="e" type="checkbox" />
-                                                <label htmlFor="e">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
-
+                                        
+                                        <section className="arrangement_inside">
+                                                <div className="can-toggle">
+                                                        <input id="e" type="checkbox" />
+                                                        <label htmlFor="e">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
                                 </div>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Any history of rheumatic fever?</span>
-
-                                        <div className="can-toggle">
-                                                <input id="f" type="checkbox" />
-                                                <label htmlFor="f">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
-
+                                        
+                                        <section className="arrangement_inside">
+                                                <div className="can-toggle">
+                                                        <input id="f" type="checkbox" />
+                                                        <label htmlFor="f">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
                                 </div>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Any digestive trouble? </span>
-
-                                        <div className="can-toggle">
-                                                <input id="g" type="checkbox" />
-                                                <label htmlFor="g">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
-
+                                        
+                                        <section className="arrangement_inside">
+                                                <div className="can-toggle">
+                                                        <input id="g" type="checkbox" />
+                                                        <label htmlFor="g">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
                                 </div>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Any other illness, injury or operation? </span>
-
-                                        <div className="can-toggle">
-                                                <input id="h" type="checkbox" />
-                                                <label htmlFor="h">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
-
+                                        
+                                        <section className="arrangement_inside">
+                                                <div className="can-toggle">
+                                                        <input id="h" type="checkbox" />
+                                                        <label htmlFor="h">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
                                 </div>
 
 
                                 <p>Has any of your near relative suffered from</p>
 
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Tuberculosis?  </span>
-
-                                        <div className="can-toggle">
-                                                <input id="i" type="checkbox" />
-                                                <label htmlFor="i">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
-
+                                        
+                                        <section className="arrangement_inside">
+                                                <div className="can-toggle">
+                                                        <input id="i" type="checkbox" />
+                                                        <label htmlFor="i">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
                                 </div>
 
-                                <div>
+                                <div className="history arrangement">
                                         
                                         <span>Nervous disease? (if so give particular)   </span>
-
-                                        <div className="can-toggle">
-                                                <input id="j" type="checkbox" />
-                                                <label htmlFor="j">
-                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                </label>
-                                        </div>
-
+                                        
+                                        <section className="arrangement_inside">
+                                                <div className="can-toggle">
+                                                        <input id="j" type="checkbox" />
+                                                        <label htmlFor="j">
+                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                        </label>
+                                                </div>
+                                        </section>
                                 </div>
 
 
@@ -172,16 +187,18 @@ export const HistoryForm = () => {
                                        (
                                              <>
                                              
-                                                <div>
+                                                <div className="history arrangement">
                                         
                                                         <span>Have you suffered from disease of the breast or sexual organ? </span>
-
-                                                        <div className="can-toggle">
-                                                                <input id="k" type="checkbox" />
-                                                                <label htmlFor="k">
-                                                                <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
-                                                                </label>
-                                                        </div>
+                                                                
+                                                        <section className="arrangement_inside">
+                                                                <div className="can-toggle">
+                                                                        <input id="k" type="checkbox" />
+                                                                        <label htmlFor="k">
+                                                                        <div className="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+                                                                        </label>
+                                                                </div>
+                                                        </section>
 
                                                 </div>
 

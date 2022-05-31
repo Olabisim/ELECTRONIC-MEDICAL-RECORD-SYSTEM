@@ -101,3 +101,17 @@ button {
 .form_root.flex_two {
         margin: auto;
 }
+
+/* for histroy styles */
+
+.history.arrangement {
+        display: flex;
+}
+.history.arrangement span {
+        width: 40vw;
+}
+.history.arrangement .arrangement_inside {    
+        display: flex;
+        justify-content: flex-end;
+        width: 70%;
+}
