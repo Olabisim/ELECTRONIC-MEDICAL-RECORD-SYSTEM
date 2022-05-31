@@ -1,7 +1,7 @@
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { incrementCount, decrementCount } from "../../features/student/StudentSlice"
-
+import '../../css/presentcomplaints.css'
 
 
 function PresentComplaints() {        
@@ -24,11 +24,14 @@ function PresentComplaints() {
 
                                 <h2 className="stats h1">PLEASE INCLUDE ANY <br /> PRESENT COMPLAINTS</h2>
                                 
+                                <section className='presentcomplaints'>
+
+                                        <textarea className='presentcomplaints' placeholder="present complaints">
+
+                                        </textarea>
+
+                                </section>
                                 
-                                <textarea placeholder="present complaints">
-
-                                </textarea>
-
                                 
                                 {/* <Link to="/student/fourth"> */}
                         
