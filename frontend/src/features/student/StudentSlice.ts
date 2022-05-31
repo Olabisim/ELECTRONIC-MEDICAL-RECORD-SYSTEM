@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 interface inst {
-        value: number;
+        count: number;
 }
 
 const initialState: inst = {
-        value: 3
+        count: 0
 }
 
 
@@ -17,8 +17,16 @@ export const studentSlice = createSlice({
         initialState,
 
         reducers: {
-                
+                incrementCount: (state) => {
+                        state.count = state.count + 1;
+                },
+                decrementCount: (state) => {
+                        state.count = state.count - 1;
+                }
         }
 
-
 })
+
+export const {incrementCount, decrementCount} = studentSlice.actions;
+
+export default studentSlice.reducer;

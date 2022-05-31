@@ -1,15 +1,26 @@
 
 import { Link } from "react-router-dom"
 import '../../css/input.css'
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { incrementCount, decrementCount } from "../../features/student/StudentSlice"
+
+
 
 
 export const Form4 = () => {
+
+
+        const count = useAppSelector(state => state.student.count)
+
+        const dispatch = useAppDispatch()
+
+
         return (
                 <div className="form_root main">
                         <div className="form_root flex_one">
                                 <h2 className="stats h1 new_font">
 
-                                STEP 2 / 5
+                                STEP {count} / 5
                                 </h2>
                                 <img src="../../../form_leaf.svg" alt="designs" />
                         </div>
@@ -44,17 +55,17 @@ export const Form4 = () => {
                                 </div>
 
                                 
-                                <Link to="/student/fourth">
+                                {/* <Link to="/student/fourth"> */}
                         
-                                        <button className="stats button">prev</button>
+                                        <button className="stats button" onClick={() => dispatch(decrementCount())} >prev</button>
                                         
-                                </Link>
+                                {/* </Link> */}
 
-                                <Link to="/student/fifth">
+                                {/* <Link to="/student/fifth"> */}
                         
-                                        <button className="stats button" style={{marginLeft: "65px"}} >next</button>
+                                        <button className="stats button" style={{marginLeft: "65px"}} onClick={() => dispatch(incrementCount())} >next</button>
                                         
-                                </Link>
+                                {/* </Link> */}
                                 
                         </div>
 

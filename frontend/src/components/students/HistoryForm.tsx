@@ -1,12 +1,18 @@
 
 import { Link } from "react-router-dom"
 import '../../css/select_option.css'
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { incrementCount, decrementCount } from "../../features/student/StudentSlice"
 
 export const HistoryForm = () => {
 
         let female:boolean = false
 
+        const count = useAppSelector(state => state.student.count)
+
+        const dispatch = useAppDispatch()
         
+
         // <h2>HISTORY (Personal & Family) </h2>
 
         return (
@@ -14,7 +20,7 @@ export const HistoryForm = () => {
                 <div className="form_root flex_one">
                         <h2 className="stats h1 new_font">
 
-                        STEP 2 / 5
+                        STEP {count} / 5
                         </h2>
                         <img src="../../../form_leaf.svg" alt="designs" />
                 </div>
@@ -188,11 +194,17 @@ export const HistoryForm = () => {
                                 </textarea>
 
                         
-                        <Link to="/student/fresh">
+                                {/* <Link to="/student/fourth"> */}
                         
-                                <button className="stats button">next</button>
-                                
-                        </Link>
+                                        <button className="stats button" onClick={() => dispatch(decrementCount())} >prev</button>
+                                        
+                                {/* </Link> */}
+
+                                {/* <Link to="/student/fifth"> */}
+                        
+                                        <button className="stats button" style={{marginLeft: "65px"}} onClick={() => dispatch(incrementCount())} >next</button>
+                                        
+                                {/* </Link> */}
                 </div>
                 </div>
         )
