@@ -13,6 +13,8 @@ function PresentComplaints() {
 
         const dispatch = useAppDispatch()
 
+        console.log(presentComplaint)
+
         return (
                 <div className="form_root main">
                         <div className="form_root flex_one">
@@ -29,7 +31,7 @@ function PresentComplaints() {
                                 
                                 <section className='presentcomplaints'>
 
-                                        <textarea className='presentcomplaints' placeholder="present complaints">
+                                        <textarea className='presentcomplaints' placeholder="present complaints" value={presentComplaint} onChange={(e) => setPresentComplaint(e.target.value)}>
 
                                         </textarea>
 

@@ -20,7 +20,7 @@ export const Form1 = () => {
         const [ date, setDate ] = useState<string>('')
         const [ office, setOffice ] = useState<string>('')
 
-        console.log(name)
+        // console.log(name)
 
         return (
                 <>
@@ -46,37 +46,37 @@ export const Form1 = () => {
                                                 
                                                 <div className="input-field">
                                                         <label htmlFor="other_name">other names:</label>
-                                                      <input type="text" id="other_name" onChange={() => setName(name)} required />
+                                                        <input type="text" value={otherName} onChange={(e) => setOtherName(e.target.value)} required />
                                                 </div>
                                                 
                                                 <div className="input-field">
                                                         <label htmlFor="year_of_admission">year of admission:</label>
-                                                      <input type="text" id="year_of_admission" required />
+                                                        <input type="text" value={yearOfAdmission} onChange={(e) => setYearOfAdmission(e.target.value)} required />
                                                 </div>
                                                 
                                                 <div className="input-field">
                                                         <label htmlFor="faculty">faculty:</label>
-                                                      <input type="text" id="faculty" required />
+                                                        <input type="text" value={faculty} onChange={(e) => setFaculty(e.target.value)} required />
                   
                                                 </div>                                
                                                 <div className="input-field">
                                                         <label htmlFor="department">department:</label>
-                                                      <input type="text" id="department" required />
+                                                        <input type="text" value={department} onChange={(e) => setDepartment(e.target.value)} required />
                   
                                                 </div>                                
                                                 <div className="input-field">
                                                         <label htmlFor="religion">religion:</label>
-                                                      <input type="text" id="religion" required />
+                                                        <input type="text" value={religion} onChange={(e) => setReligion(e.target.value)} required />
                   
                                                 </div>                                
                                                 <div className="input-field">
                                                         <label htmlFor="date">date:</label>
-                                                      <input type="text" id="date" required />
+                                                        <input type="text" value={date} onChange={(e) => setDate(e.target.value)} required />
                                                 </div>
                 
                                                 <div className="input-field">
                                                         <label htmlFor="office_address">office address:</label>
-                                                      <input type="text" id="office_address" required />
+                                                        <input type="text" value={office} onChange={(e) => setOffice(e.target.value)} required />
                                                 </div>
                 
                                                 {/* <Link to="/student/fourth"> */}

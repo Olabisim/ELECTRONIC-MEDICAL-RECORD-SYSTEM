@@ -20,6 +20,7 @@ export const Form4 = () => {
         const [telephoneNoLG, setTelephoneNoLG] = useState<string>('')
         const [residenceLG, setResidenceLG] = useState<string>('')
  
+        // console.log(nameLG)
 
         return (
                 <div className="form_root main">
@@ -37,27 +38,27 @@ export const Form4 = () => {
                                 
                                 <div className="input-field">
                                         <label htmlFor="Name">Name:</label>
-                                        <input type="text" id="Name" required />
+                                        <input type="text" value={nameLG} onChange={(e) => setNameLG(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">
                                         <label htmlFor="relationship">relationship:</label>
-                                        <input type="text" id="relationship" required />
+                                        <input type="text" value={relationshipLG} onChange={(e) => setRelationshipLG(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">
                                         <label htmlFor="office_address">office_address:</label>
-                                        <input type="text" id="office_address" required />
+                                        <input type="text" value={officeAddressLG} onChange={(e) => setOfficeAddressLG(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">
                                         <label htmlFor="Telephone_No">Telephone_No:</label>
-                                        <input type="text" id="Telephone_No" required />
+                                        <input type="text" value={telephoneNoLG} onChange={(e) => setTelephoneNoLG(e.target.value)} required />
                                 </div> 
                                 
                                 <div className="input-field">
                                         <label htmlFor="Residence">Residence:</label>
-                                        <input type="text" id="Residence" required />
+                                        <input type="text" value={residenceLG} onChange={(e) => setResidenceLG(e.target.value)} required />
                                 </div>
 
                                 

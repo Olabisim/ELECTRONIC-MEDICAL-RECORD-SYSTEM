@@ -31,6 +31,8 @@ export const LoginStudent = () => {
                 setToggle('rect2')
         }
 
+        console.log(matricNoStudent)
+
         return(
                 <div className="Login_container_for_flex">
 
@@ -43,22 +45,24 @@ export const LoginStudent = () => {
                         <input 
                                 ref={matricNo} 
                                 className={`Login_text Login_inc2 ${!toggle && 'Login_rect2'}`}
-                                onFocus={handle2}
-                                onClick={handle2}
+                                // onFocus={handle2}
+                                // onClick={handle2}
                                 type="text" 
                                 name="matricNo" placeholder='matric number' 
-                                // value="" 
+                                value={matricNoStudent}
+                                onChange={(e) => setMatricNoStudent(e.target.value)}
                         /> 
                         {/* <!-- Had to remove the type "password" due to the browser user credential's autofill--> */}
 
                         <input 
-                        ref={password} 
-                        className={`Login_text Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
-                        onFocus={handle1}
-                        onClick={handle1}
-                        type="password" name="Password" placeholder='Password' 
-                        // style={{borderTop: "1px solid white"}}
-                        // value="" 
+                                ref={password} 
+                                className={`Login_text Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
+                                // onFocus={handle1}
+                                // onClick={handle1}
+                                type="password" name="Password" placeholder='Password' 
+                                // style={{borderTop: "1px solid white"}}
+                                value={passwordStudent}
+                                onChange={(e) => setPasswordStudent(e.target.value)}
                         />
 
                         <Link to="/student">
