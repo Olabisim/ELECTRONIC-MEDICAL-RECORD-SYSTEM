@@ -3,8 +3,7 @@ import { Link } from "react-router-dom"
 import '../../css/input.css'
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { incrementCount, decrementCount } from "../../features/student/StudentSlice"
-
-
+import { useState } from "react"
 
 
 export const Form4 = () => {
@@ -14,6 +13,13 @@ export const Form4 = () => {
 
         const dispatch = useAppDispatch()
 
+        // all LG means LOCAL GUARDIAN 
+        const [nameLG, setNameLG] = useState<string>('')
+        const [relationshipLG, setRelationshipLG] = useState<string>('')
+        const [officeAddressLG, setOfficeAddressLG] = useState<string>('')
+        const [telephoneNoLG, setTelephoneNoLG] = useState<string>('')
+        const [residenceLG, setResidenceLG] = useState<string>('')
+ 
 
         return (
                 <div className="form_root main">

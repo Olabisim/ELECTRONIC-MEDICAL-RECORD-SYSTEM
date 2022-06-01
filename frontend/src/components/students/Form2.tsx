@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import '../../css/input.css'
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { incrementCount, decrementCount } from "../../features/student/StudentSlice"
+import { useState } from "react"
 
 
 
@@ -11,6 +12,15 @@ export const Form2 = () => {
         const count = useAppSelector(state => state.student.count)
 
         const dispatch = useAppDispatch()
+
+        const [ homeAddress, setHomeAddress ] = useState<string>('')
+        const [ sex, setSex ] = useState<string>('')
+        const [ age, setAge ] = useState<string>('')
+        const [ nationality, setNationality ] = useState<string>('')
+        const [ ethnicGroup, setEthnicGroup ] = useState<string>('')
+        const [ maritalSatus, setMaritalStatus ] = useState<string>('')
+        const [ fatherTelNo, setFatherTelNo ] = useState<string>('')
+        const [ motherTelNo, setMotherTelNo ] = useState<string>('')
 
         return (
                 <div className="form_root main">

@@ -2,7 +2,12 @@ import React, {useRef, useState} from 'react'
 import '../../css/login.css'
 import {Link} from 'react-router-dom'
 
+
 export const LoginStudent = () => {
+
+        const [matricNoStudent, setMatricNoStudent] = useState<string>('')
+        const [passwordStudent, setPasswordStudent] = useState<string>('')
+
 
         const [toggle, setToggle] = useState<String>('rect2')
 

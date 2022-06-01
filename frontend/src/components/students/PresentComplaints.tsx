@@ -2,9 +2,12 @@
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { incrementCount, decrementCount } from "../../features/student/StudentSlice"
 import '../../css/presentcomplaints.css'
+import {useState} from 'react'
 
 
 function PresentComplaints() {        
+
+        const [presentComplaint, setPresentComplaint] = useState<string>('')
 
         const count = useAppSelector(state => state.student.count)
 

@@ -3,12 +3,24 @@ import { Link } from 'react-router-dom'
 import '../../css/input.css'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { incrementCount, decrementCount } from '../../features/student/StudentSlice'
+import { useState } from 'react'
 
 export const Form1 = () => {
 
         const count = useAppSelector(state => state.student.count)
         
         const dispatch = useAppDispatch()
+
+        const [ name, setName ] = useState<string>('')
+        const [ otherName, setOtherName ] = useState<string>('')
+        const [ yearOfAdmission, setYearOfAdmission ] = useState<string>('')
+        const [ faculty, setFaculty ] = useState<string>('')
+        const [ department, setDepartment ] = useState<string>('')
+        const [ religion, setReligion ] = useState<string>('')
+        const [ date, setDate ] = useState<string>('')
+        const [ office, setOffice ] = useState<string>('')
+
+        console.log(name)
 
         return (
                 <>
@@ -28,13 +40,13 @@ export const Form1 = () => {
                                                 
                                                 <div className="input-field">
                                                         <label htmlFor="name">Your name:</label>
-                                                        <input type="text" id="name" required />
+                                                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
                                                 </div>
                                                 
                                                 
                                                 <div className="input-field">
                                                         <label htmlFor="other_name">other names:</label>
-                                                      <input type="text" id="other_name" required />
+                                                      <input type="text" id="other_name" onChange={() => setName(name)} required />
                                                 </div>
                                                 
                                                 <div className="input-field">
