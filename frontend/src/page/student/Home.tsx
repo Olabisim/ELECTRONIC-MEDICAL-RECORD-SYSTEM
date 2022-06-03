@@ -11,9 +11,9 @@ export const StudentHome = () => {
 
                 fetch("http://localhost:7000/api/v1/students")
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => setAllstudents(data.data.students))
 
-        })
+        },[setAllstudents])
 
         console.log(allstudents)
         console.log('allstudents')
@@ -22,6 +22,7 @@ export const StudentHome = () => {
                 <div>
 
                         HOME
+                        {allstudents}
 
                 </div>
         )

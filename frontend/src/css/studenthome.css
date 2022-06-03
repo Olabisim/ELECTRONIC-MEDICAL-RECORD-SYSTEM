@@ -5,6 +5,43 @@
 .student_home.nav {
         background: blue;
         width: 200px;
+        padding-top: 20px;
+}
+.student_home.navcon {
+        margin-top: 60px;
+}
+.student_home.navin {    
+        padding-top: 20px;
+        padding-bottom: 20px;
+        /* text-align: center; */margin-left: 15px;
+}
+.student_home.navin.active{    
+        background: white;
+        padding-left: 30px;
+        color: blue !important;
+}
+.student_home.navin.active i, span{  
+        color: blue;
+}
+.student_home.nav i {
+        color: white;
+        font-size: 30px;
+        padding: 10px;
+}
+.student_home.nav span {
+        color: white;
+        font-size: 25px;
+        padding: 10px;
+}
+.student_home.nav .navin.active {
+        color: blue;
+        /* font-size: 25px;
+        padding: 10px; */
+}
+.student_home.nav  {
+        color: white;
+        font-size: 25px;
+        padding: 10px;
 }
 
 .student_home.wrap {

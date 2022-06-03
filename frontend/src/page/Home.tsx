@@ -8,9 +8,9 @@ const Home = () => {
         return (
                 <div className='parent_home'>
                        
+                        <h2>PLEASE LOG IN TO YOUR HEALTH CENTER INFORMATIONS </h2>
 
-
-                       <Link to="/student/first" >
+                       <Link to="/student" >
                         <div className='home btn-wrap'>
                                         <div>
                                                 <div className='home cnt cnt-4'><p className='home text'>

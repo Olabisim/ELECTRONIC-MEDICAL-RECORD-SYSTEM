@@ -49,6 +49,14 @@
 
 .stats.parent {
         height: 100vh;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+        background-image: url('../../public/STATS.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+}
+.stats.parent_inner {
         display: flex;
         align-items: center;
         justify-content: center;

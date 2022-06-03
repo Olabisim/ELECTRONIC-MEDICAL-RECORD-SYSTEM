@@ -1,5 +1,4 @@
 
-import { Link } from "react-router-dom"
 import '../../css/select_option.css'
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { incrementCount, decrementCount } from "../../features/student/StudentSlice"

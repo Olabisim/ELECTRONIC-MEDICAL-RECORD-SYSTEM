@@ -1,0 +1,29 @@
+[10:31 AM, 6/2/2022] Olabisi: authentication of 
+doctor 
+nurse
+attendee
+medical_lab_assistant
+[10:32 AM, 6/2/2022] Olabisi: so na only staff and student fit create accounts and login, but all the rest no fit create account
+
+
+
+Vital signs
+Temperature pulse and BP
+
+Doctor consultation
+Need for lab
+Recommend lab
+
+Lab test
+
+Doctors and nurse work on the lab request form
+
+Nurse can predict who came.
+
+
+Lab or x-ray
+
+New student must do lab and x-ray 
+Doctor 
+
+Pregnant can't take x-ray
