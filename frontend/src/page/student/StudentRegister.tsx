@@ -1,14 +1,14 @@
 
-import '../css/studentregister.css'
+import '../../css/studentregister.css'
 import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { incrementCount } from '../features/student/StudentSlice';
-import { Form1 } from '../components/students/Form1';
-import { Form2 } from '../components/students/Form2';
-import { Form4 } from '../components/students/Form4'
-import { HistoryForm } from '../components/students/HistoryForm'
-import { LoginStudent } from '../components/students/LoginStudent'
-import { PresentComplaints } from '../components/students/PresentComplaints'
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { incrementCount } from '../../features/student/StudentSlice';
+import { Form1 } from '../../components/students/Form1';
+import { Form2 } from '../../components/students/Form2';
+import { Form4 } from '../../components/students/Form4'
+import { HistoryForm } from '../../components/students/HistoryForm'
+import { LoginStudent } from '../../components/students/LoginStudent'
+import { PresentComplaints } from '../../components/students/PresentComplaints'
 
 export const StudentRegister = () => {
 

@@ -63,7 +63,7 @@ export const Login = () => {
                         <div className="Login_info_down">
                                 <div className='Login_info'>*If you have no record with health center</div>
 
-                                <Link to="/student/register">
+                                <Link to="/home">
                                         <div className='Login_info linnk'>*please <span> register</span></div>
                                 </Link>
 

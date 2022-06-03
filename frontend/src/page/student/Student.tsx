@@ -6,7 +6,7 @@
 // import { HistoryForm } from "../components/students/HistoryForm"
 // import { Measurement } from "../components/students/Measurement"
 
-import '../css/studenthome.css'
+import '../../css/studenthome.css'
 
 export const Student = () => {
         return (

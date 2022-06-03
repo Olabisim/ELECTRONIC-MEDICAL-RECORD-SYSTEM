@@ -8,6 +8,12 @@
         padding: 40px;
         margin: 30px;
 }
+.stats.card.pending {
+        background-color: #99cc33 !important;
+}
+.stats.button.pending {
+        background-color: #99cc33 !important;
+}
 .stats.card h2 {
         font-family: 'Josefin Slab', serif;
         letter-spacing: 2px;

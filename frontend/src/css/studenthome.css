@@ -20,9 +20,9 @@
         padding-left: 30px;
         color: blue !important;
 }
-.student_home.navin.active i, span{  
+/* .student_home.navin.active i, span{  
         color: blue;
-}
+} */
 .student_home.nav i {
         color: white;
         font-size: 30px;

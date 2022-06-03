@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './page/Home'
 import { Staff } from './page/Staff'
 import { Login } from './page/Login'
-import { Student } from './page/Student'
+import { Student } from './page/student/Student'
 import { Stats } from './page/Stats';
-import { StudentRegister } from './page/StudentRegister';
-import { StudentHome } from './page/student/Home';
+import { StudentRegister } from './page/student/StudentRegister';
+import { StudentHome } from './page/admin/Home';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
 
                                 
                                 <Route path="/"  element={<Login />} />
+                                <Route path="/home" element={<Home />} />
                                 
                                 {/* ADMIN */}
 
@@ -63,7 +64,6 @@ function App() {
                                 <Route path="/medicalass/login" element={<Stats />} /> 
                                 <Route path="/medicalass" element={<Stats />} /> 
 
-                                <Route path="/student/home" element={<Home />} />
                                 
                         </Routes>
                 </Router>
