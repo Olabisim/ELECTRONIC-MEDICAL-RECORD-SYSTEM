@@ -61,8 +61,8 @@ function App() {
 
                                 {/* MEDICAL_ASS */}
 
-                                <Route path="/medicalass/login" element={<DefaultLogin />} /> 
-                                <Route path="/medicalass" element={<Stats />} /> 
+                                <Route path="/medical/login" element={<DefaultLogin />} /> 
+                                <Route path="/medical" element={<Stats />} /> 
 
                                 
                         </Routes>

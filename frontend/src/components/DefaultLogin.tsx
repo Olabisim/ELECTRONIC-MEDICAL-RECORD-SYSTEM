@@ -19,7 +19,7 @@ export const DefaultLogin = () => {
 
                         <div className="Login_container">
                                 
-                                <div className="Login_header" style={{marginLeft: '120px'}}>{location.pathname} <br /> Account</div>
+                                <div className="Login_header" style={{marginLeft: '120px'}}>{location.pathname.replace(/^\/([^\/]*).*$/, '$1')} <br /> Account</div>
                                 {/* <div className='Login_info'>*LASU Health Center</div> */}
                                 <input 
                                         className={`Login_text Login_inc2 Login_rect2`}
@@ -39,7 +39,7 @@ export const DefaultLogin = () => {
                                 />
 
                                 <Link to="/student">
-                                        <button className='Login button'>LOG IN</button>
+                                        <button className='Login button fredoka_font'>LOG IN</button>
                                 </Link>
                         </div>
                 

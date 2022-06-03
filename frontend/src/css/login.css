@@ -127,7 +127,8 @@ button.Login:focus {
 
 .Login.button {
   background: white;
-  color: blue;
+  color: blue;    
+  font-weight: 900;
 }
 .Login_container_for_flex {
   display: flex;
