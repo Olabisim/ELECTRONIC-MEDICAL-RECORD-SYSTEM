@@ -9,7 +9,11 @@ import {
   deleteStudent,
 } from "../controllers/students.js";
 
-router.route("/").get(getStudents).post(createStudent);
+import { studentSignup, studentLogin } from "../controllers/authentication.js";
+
+router.post("/signup", studentSignup);
+router.post("/login", studentLogin);
+
 router
   .route("/:id")
   .get(getStudent)
