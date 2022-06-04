@@ -15,6 +15,7 @@ import { DefaultLogin } from './components/DefaultLogin';
 
 import { NurseHome } from './page/nurse/Home'
 import { NurseStudent } from './page/nurse/NurseStudent'
+import { NurseStudentForm } from './page/nurse/NurseStudentForm'
 
 function App() {
         return (
@@ -65,6 +66,7 @@ function App() {
                                 <Route path="/nurse/login" element={<DefaultLogin />} /> 
                                 <Route path="/nurse" element={<NurseHome />} /> 
                                 <Route path="/nurse/student" element={<NurseStudent />} /> 
+                                <Route path="/nurse/student/form" element={<NurseStudentForm />} /> 
 
                                 {/* MEDICAL_ASS */}
 

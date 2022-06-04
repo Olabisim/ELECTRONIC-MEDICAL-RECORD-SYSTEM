@@ -1,5 +1,5 @@
 
-import '../../css/nursetable.css'
+import '../../css/nurse.css'
 
 export const NurseStudent = () => {
         return (
