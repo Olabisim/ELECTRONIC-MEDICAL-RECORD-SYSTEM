@@ -5,10 +5,16 @@ import Home from './page/Home'
 import { Staff } from './page/staff/Staff'
 import { Login } from './page/Login'
 import { Student } from './page/student/Student'
-import { Stats } from './page/Stats';
+import { Stats } from './page/admin/Stats';
 import { StudentRegister } from './page/student/StudentRegister';
-import { StudentHome } from './page/admin/Home';
+import { Admin } from './page/admin/Home';
+import { AdminStudent } from './page/admin/Student';
 import { DefaultLogin } from './components/DefaultLogin';
+
+// NURSE
+
+import { NurseHome } from './page/nurse/Home'
+import { NurseStudent } from './page/nurse/NurseStudent'
 
 function App() {
         return (
@@ -22,10 +28,10 @@ function App() {
                                 
                                 {/* ADMIN */}
 
-                                <Route path="/admin" element={<Stats />} /> 
+                                <Route path="/admin" element={<Admin />} /> 
                                 <Route path="/admin/login" element={<DefaultLogin />} /> 
                                 <Route path="/admin/staff" element={<Stats />} /> 
-                                <Route path="/admin/student" element={<StudentHome />} /> 
+                                <Route path="/admin/student" element={<AdminStudent />} /> 
                                 <Route path="/admin/attendee" element={<Stats />} /> 
                                 <Route path="/admin/doctor" element={<Stats />} /> 
                                 <Route path="/admin/nurse" element={<Stats />} /> 
@@ -57,7 +63,8 @@ function App() {
                                 {/* NURSE */}
                                 
                                 <Route path="/nurse/login" element={<DefaultLogin />} /> 
-                                <Route path="/nurse" element={<Stats />} /> 
+                                <Route path="/nurse" element={<NurseHome />} /> 
+                                <Route path="/nurse/student" element={<NurseStudent />} /> 
 
                                 {/* MEDICAL_ASS */}
 

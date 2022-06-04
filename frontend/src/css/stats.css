@@ -9,10 +9,10 @@
         margin: 30px;
 }
 .stats.card.pending {
-        background-color: #99cc33 !important;
+        background-color: rgb(0,128,0, 0.5) !important;
 }
 .stats.button.pending {
-        background-color: #99cc33 !important;
+        background-color: rgb(0,128,0, 0.5) !important;
 }
 .stats.card h2 {
         font-family: 'Josefin Slab', serif;

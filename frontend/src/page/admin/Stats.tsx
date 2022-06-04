@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/stats.css';
+import '../../css/stats.css';
 import { Link } from "react-router-dom";
 
 export const Stats = () => {

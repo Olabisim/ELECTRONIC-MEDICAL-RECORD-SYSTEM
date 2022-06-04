@@ -13,7 +13,7 @@ export const Form2 = () => {
         const dispatch = useAppDispatch()
 
         const [ homeAddress, setHomeAddress ] = useState<string>('')
-        const [ sex, setSex ] = useState<string>('')
+        const [ gender, setGender ] = useState<string>('')
         const [ age, setAge ] = useState<string>('')
         const [ dateOfBirth, setDateOfBirth ] = useState<string>('')
         const [ nationality, setNationality ] = useState<string>('')
@@ -42,8 +42,8 @@ export const Form2 = () => {
                                 </div>
                                 
                                 <div className="input-field">
-                                        <label htmlFor="sex">sex:</label>
-                                        <input type="text" value={sex} id="some" onChange={(e) => setSex(e.target.value)} required />
+                                        <label htmlFor="gender">gender:</label>
+                                        <input type="text" value={gender} id="some" onChange={(e) => setGender(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">

@@ -10,7 +10,7 @@ export const Form1 = () => {
         
         const dispatch = useAppDispatch()
 
-        const [ name, setName ] = useState<string>('')
+        const [ surname, setSurname ] = useState<string>('')
         const [ otherName, setOtherName ] = useState<string>('')
         const [ yearOfAdmission, setYearOfAdmission ] = useState<string>('')
         const [ faculty, setFaculty ] = useState<string>('')
@@ -38,8 +38,8 @@ export const Form1 = () => {
                                         <div className="form_root flex_two">
                                                 
                                                 <div className="input-field">
-                                                        <label htmlFor="name">Your name:</label>
-                                                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+                                                        <label htmlFor="name">Surname:</label>
+                                                        <input type="text" value={surname} onChange={(e) => setSurname(e.target.value)} required />
                                                 </div>
                                                 
                                                 
