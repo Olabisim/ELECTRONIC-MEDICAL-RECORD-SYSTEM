@@ -22,3 +22,50 @@
   font-family: 'Fredoka One', cursive;
 
 } */
+
+
+
+/* 
+
+
+
+*/
+
+.history_main {
+  margin: 20px;
+  /* background: lavender; */
+  width: 80vw;
+  height: 100vh;
+}
+
+.history_main_in .h2{
+
+  
+  font-family: 'Titan One', cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+
+}
+.history_main_in p{
+
+  
+  font-size: 24px;
+
+}
+
+.history_main_head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history_main_active {
+  background: none;
+  color: blue;
+}
+
+.history_main_head input {
+  border: 2px solid blue !important;
+}
+.history_main_head button {
+  font-size: 16px;
+}

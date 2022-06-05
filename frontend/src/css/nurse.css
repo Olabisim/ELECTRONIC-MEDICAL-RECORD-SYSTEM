@@ -232,6 +232,15 @@
         .NStable .NStr {
           margin-bottom: 15px;
         }
+        .NStable .NStr .stats.button.NS {    
+          /* background: blue; */
+          border: none;
+          box-shadow: none;
+          padding: none;
+          /* font-family: 'Titan One', cursive; */
+          text-transform: lowercase;
+          /* transition: 0.25s; */
+        }
       
         .NStable .NStd {
           text-align: right;
@@ -251,3 +260,30 @@
           text-align: left;
         }
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+
+      NURSE HISTORY
+
+
+
+*/
+
