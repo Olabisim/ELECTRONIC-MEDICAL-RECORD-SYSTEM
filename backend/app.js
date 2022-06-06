@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
 
 // CORS PROBLEM END
 
-app.use("/api/v1/students", studentRoutes);
+app.use("/api/v1/student", studentRoutes);
 
 // unhandled routes
 app.all("*", (req, res, next) => {

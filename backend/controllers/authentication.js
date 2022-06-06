@@ -1,8 +1,10 @@
+import { promisify } from "util";
+
 import jwt from "jsonwebtoken";
 
 import Student from "../models/Student.js";
 
-const studentSignup = async (req, res) => {
+const studentSignup = async (req, res, next) => {
   try {
     // pick student reg data data body
     const student = await Student.create({
@@ -28,6 +30,7 @@ const studentSignup = async (req, res) => {
       matricNumber: req.body.matricNumber,
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
+      healthHistory: req.body.healthHistory,
     });
 
     //sign token
@@ -53,10 +56,10 @@ const studentSignup = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(400).json({
-      status: "failed",
-      message: err,
-    });
+    err.statusCode = 400;
+    err.status = "failed";
+
+    next(err);
   }
 };
 
@@ -115,4 +118,50 @@ const studentLogin = async (req, res, next) => {
   }
 };
 
-export { studentSignup, studentLogin };
+const protect = async (req, res, next) => {
+  try {
+    let token;
+
+    // get bearer token from header
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer")
+    ) {
+      token = req.headers.authorization.split(" ")[1];
+    }
+
+    // if no token unauthorized
+    if (!token) {
+      const err = new Error("You are not logged in. Please log in");
+      err.statusCode = 401;
+      err.status = "failed";
+
+      next(err);
+    }
+
+    // decode token
+    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
+    // find student by id in payload
+    const decoded_student = await Student.findById(decoded.id);
+
+    // unauthorized if student id not found
+    if (!decoded_student) {
+      const err = new Error("This student never did or no longer exist");
+      err.statusCode = 401;
+      err.status = "failed";
+
+      next(err);
+    }
+
+    // add decoded student to req object
+    req.student = decoded_student;
+
+    next();
+  } catch (err) {
+    err.statusCode = 400;
+    err.status = "failed";
+  }
+};
+
+export { studentSignup, studentLogin, protect };

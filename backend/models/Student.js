@@ -2,6 +2,45 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 import bcryptjs from "bcryptjs";
 
+const healtheHistorySchema = new Schema({
+  nervousDisease: {
+    type: Boolean,
+    default: false,
+  },
+  chestLungsDisease: {
+    type: Boolean,
+    default: false,
+  },
+  heartDisease: {
+    type: Boolean,
+    default: false,
+  },
+  kidneyBladderDisease: {
+    type: Boolean,
+    default: false,
+  },
+  rheumaticDisease: {
+    type: Boolean,
+    default: false,
+  },
+  digestiveDisease: {
+    type: Boolean,
+    default: false,
+  },
+  otherDisease: {
+    type: Boolean,
+    default: false,
+  },
+  relativeTubDisease: {
+    type: Boolean,
+    default: false,
+  },
+  sexualDisease: {
+    type: Boolean,
+    default: false,
+  },
+});
+
 const studentSchema = new Schema({
   surname: {
     type: String,
@@ -94,7 +133,7 @@ const studentSchema = new Schema({
   userType: {
     type: String,
     enum: {
-      values: ["student", "adminUser", "admin"],
+      values: ["student"],
       message: "User has to either be a student, adminUser or an admin",
     },
     default: "student",
@@ -120,6 +159,7 @@ const studentSchema = new Schema({
     default: true,
     select: false,
   },
+  healthHistory: healtheHistorySchema,
 });
 
 // pre-save document middleware
