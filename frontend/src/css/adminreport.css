@@ -1,5 +1,5 @@
 @charset "UTF-8";
-h2 {
+h2.report-dashboard-title {
   color: #333;
   font-family: "Alegreya Sans";
   font-size: 28px;
@@ -10,7 +10,7 @@ h2 {
   max-width: 600px;
 }
 
-h2:before {
+h2.report-dashboard-title:before {
   background: #d60c8c;
   content: "";
   display: block;

@@ -19,13 +19,17 @@ export const AdminStudent = () => {
         // console.log(allstudents)
         // console.log('allstudents')
 
+        const date = new Date();
+        const [month, day, year]       = [date.getMonth(), date.getDate(), date.getFullYear()];
+        const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+
 
         return (
                 <div className='main-report-dashboard'>
 
-                        HOME
+                        STUDENTS
                         <section className="report-dashboard">
-                                <h2 className="report-dashboard-title">Feeds Summary (as of 05/01/2019)</h2>
+                                <h2 className="report-dashboard-title">Feeds Summary (as of {` ${hour}:${minutes} -- ${day} / ${month + 1} / ${year}`})</h2>
                                 <div className="row">
                                 <div className="flex-container">
                                 
