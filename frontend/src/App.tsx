@@ -19,11 +19,13 @@ import { DoctorStudent } from './page/doctor/DoctorStudent';
 import { DoctorStudentView } from './page/doctor/DoctorStudentView';
 
 
-
 // ATTENDEE
 
 import { AttendeeHome } from './page/attendee/Home';
 
+// ATTENDEE
+
+import { MedicalassHome } from './page/medicalass/Home';
 
 
 // NURSE
@@ -90,7 +92,7 @@ function App() {
                                 {/* MEDICAL_ASS */}
 
                                 <Route path="/medical/login" element={<DefaultLogin />} /> 
-                                <Route path="/medical" element={<Stats />} /> 
+                                <Route path="/medical" element={<MedicalassHome />} /> 
 
                                 
                         </Routes>
