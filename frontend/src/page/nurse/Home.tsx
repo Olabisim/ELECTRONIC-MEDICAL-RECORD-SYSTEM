@@ -61,7 +61,7 @@ export const NurseHome = () => {
                                                 <h2>STUDENTS</h2>
                                                 <h1>PENDING</h1>
 
-                                                <Link to="/nurse/student">
+                                                <Link to="/doctor/student">
                                                         
                                                         <button className="stats button" style={{background: "green"}}>view</button>
 
@@ -79,18 +79,23 @@ export const NurseHome = () => {
                                 </div>
 
                                 <div className="student_home wrap">
-                                        <div className="stats card">
+                                <div  className="stats card pending" style={{background: "green"}}>
                                                 
-                                                <h2>MEET A DOCTOR </h2>
-                                                {/* <h1></h1> */}
-                                                <button className="stats button">CALL</button>
+                                                <h2>STAFFS</h2>
+                                                <h1>PENDING</h1>
+
+                                                <Link to="/doctor/staffs">
+                                                        
+                                                        <button className="stats button" style={{background: "green"}}>view</button>
+
+                                                </Link>
 
                                         </div>
                                         <div className="stats card">
-                                                
-                                                <h2>CARD DETAILS</h2>
-                                                {/* <h1>123</h1> */}
-                                                <button className="stats button">PRINT</button>
+
+                                                <h2>STAFFS </h2>
+                                                <h1>VERIFIED</h1>
+                                                <button className="stats button">view</button>
 
                                         </div>
 

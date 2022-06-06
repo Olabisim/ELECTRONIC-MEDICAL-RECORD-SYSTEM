@@ -12,6 +12,12 @@ import { AdminStudent } from './page/admin/Student';
 import { DefaultLogin } from './components/DefaultLogin';
 
 
+// DOCTOR 
+
+import { DoctorHome } from './page/doctor/Home';
+
+
+
 // ATTENDEE
 
 import { AttendeeHome } from './page/attendee/Home';
@@ -67,7 +73,8 @@ function App() {
                                 {/* DOCTOR */}
 
                                 <Route path="/doctor/login" element={<DefaultLogin />} /> 
-                                <Route path="/doctor" element={<Stats />} /> 
+                                <Route path="/doctor" element={<DoctorHome />} /> 
+                                <Route path="/doctor/students" element={<DoctorHome />} /> 
 
                                 {/* NURSE */}
                                 
