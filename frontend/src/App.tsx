@@ -11,6 +11,13 @@ import { Admin } from './page/admin/Home';
 import { AdminStudent } from './page/admin/Student';
 import { DefaultLogin } from './components/DefaultLogin';
 
+
+// ATTENDEE
+
+import { AttendeeHome } from './page/attendee/Home';
+
+
+
 // NURSE
 
 import { NurseHome } from './page/nurse/Home'
@@ -55,7 +62,7 @@ function App() {
                                 {/* ATTENDEE */}
                                 
                                 <Route path="/attendee/login" element={<DefaultLogin />} /> 
-                                <Route path="/attendee" element={<Stats />} /> 
+                                <Route path="/attendee" element={<AttendeeHome />} /> 
 
                                 {/* DOCTOR */}
 

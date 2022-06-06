@@ -1,0 +1,23 @@
+.attendee_main {        
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        width: 80vw;
+        margin: 20px;
+        align-items: center;
+}
+.attendee_main > h2 {    
+        text-align: center;
+        font-weight: 100;
+        letter-spacing: 2px;
+        font-size: 35px;
+}
+.attendee_flex {
+        display: flex;
+}
+.entire_attendee {
+        display: flex;
+}
+.attendee_main_block {
+        display: block;
+}
