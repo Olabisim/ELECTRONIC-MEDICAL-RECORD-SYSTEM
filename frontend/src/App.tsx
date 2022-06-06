@@ -15,6 +15,8 @@ import { DefaultLogin } from './components/DefaultLogin';
 // DOCTOR 
 
 import { DoctorHome } from './page/doctor/Home';
+import { DoctorStudent } from './page/doctor/DoctorStudent';
+import { DoctorStudentView } from './page/doctor/DoctorStudentView';
 
 
 
@@ -74,7 +76,8 @@ function App() {
 
                                 <Route path="/doctor/login" element={<DefaultLogin />} /> 
                                 <Route path="/doctor" element={<DoctorHome />} /> 
-                                <Route path="/doctor/students" element={<DoctorHome />} /> 
+                                <Route path="/doctor/students" element={<DoctorStudent />} /> 
+                                <Route path="/doctor/students/view" element={<DoctorStudentView />} /> 
 
                                 {/* NURSE */}
                                 
