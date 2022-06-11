@@ -140,7 +140,7 @@ button.Login:focus {
 .Login_info_down {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   height: 513px;
 }
 .Login_info.link {
