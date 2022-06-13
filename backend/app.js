@@ -47,7 +47,7 @@ app.use("/api/v1/student", studentRoutes);
 app.all("*", (req, res, next) => {
         res.status(404).json({
                 status: "fail",
-                message: `Can't find url on this server`,
+                message: `Can't find ${req.originalUrl} on this server`,
         });
 });
 
