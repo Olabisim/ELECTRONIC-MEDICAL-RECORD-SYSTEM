@@ -5,7 +5,10 @@ const __dirname = path.dirname(__filename);
 
 import express from "express";
 import cors from "cors";
+
+// routes
 import studentRoutes from "./routes/students.js";
+import staffRoutes from "./routes/staffs.js";
 
 const app = express();
 
@@ -36,7 +39,10 @@ app.use(function (req, res, next) {
 
 // CORS PROBLEM END
 
+// students routes
 app.use("/api/v1/student", studentRoutes);
+// staffs routes
+app.use("/api/v1/staff", staffRoutes);
 
 // unhandled routes
 app.all("*", (req, res, next) => {

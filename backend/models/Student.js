@@ -134,7 +134,7 @@ const studentSchema = new Schema({
     type: String,
     enum: {
       values: ["student"],
-      message: "User has to either be a student, adminUser or an admin",
+      message: "User has to be a student",
     },
     default: "student",
   },

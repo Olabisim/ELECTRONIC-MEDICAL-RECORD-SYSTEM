@@ -1,20 +1,16 @@
 import express from "express";
 const router = express.Router();
 
-import Student from "../models/Student.js";
-import Staff from "../models/Staff.js";
-
 import { getStudent } from "../controllers/students.js";
 
 import {
-  studentSignup,
   studentLogin,
-  protect,
-  signup,
+  protectStudent,
+  studentSignup,
 } from "../controllers/authentication.js";
 
-router.post("/signup", signup(Student));
+router.post("/signup", studentSignup);
 router.post("/login", studentLogin);
-router.get("/", protect(Student), getStudent);
+router.get("/", protectStudent, getStudent);
 
 export default router;

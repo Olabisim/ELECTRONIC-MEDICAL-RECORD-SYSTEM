@@ -5,95 +5,67 @@ import jwt from "jsonwebtoken";
 import Student from "../models/Student.js";
 import Staff from "../models/Staff.js";
 
-const signup = (User) => {
-  return async (req, res, next) => {
-    try {
-      let userReqBody;
-      if (User == Student) {
-        userReqBody = {
-          surname: req.body.surname,
-          otherNames: req.body.otherNames,
-          yearOfAdmission: req.body.yearOfAdmission,
-          faculty: req.body.faculty,
-          department: req.body.department,
-          religion: req.body.religion,
-          telPhone: req.body.telPhone,
-          date: req.body.date,
-          homeAddress: req.body.homeAddress,
-          gender: req.body.gender,
-          dateOfBirth: req.body.dateOfBirth,
-          nationality: req.body.nationality,
-          ethnicGroup: req.body.ethnicGroup,
-          maritalStatus: req.body.maritalStatus,
-          guardianName: req.body.guardianName,
-          guardianOffAdd: req.body.guardianOffAdd,
-          guardianTelNum: req.body.guardianTelNum,
-          guardianResAdd: req.body.guardianResAdd,
-          guardianRel: req.body.guardianRel,
-          matricNumber: req.body.matricNumber,
-          password: req.body.password,
-          passwordConfirm: req.body.passwordConfirm,
-          healthHistory: req.body.healthHistory,
-        };
-      } else if (User == Staff) {
-        userReqBody = {
-          surname: req.body.surname,
-          otherNames: req.body.otherNames,
-          yearOfAdmission: req.body.yearOfAdmission,
-          faculty: req.body.faculty,
-          department: req.body.department,
-          religion: req.body.religion,
-          telPhone: req.body.telPhone,
-          date: req.body.date,
-          homeAddress: req.body.homeAddress,
-          gender: req.body.gender,
-          dateOfBirth: req.body.dateOfBirth,
-          nationality: req.body.nationality,
-          ethnicGroup: req.body.ethnicGroup,
-          maritalStatus: req.body.maritalStatus,
-          guardianName: req.body.guardianName,
-          guardianOffAdd: req.body.guardianOffAdd,
-          guardianTelNum: req.body.guardianTelNum,
-          guardianResAdd: req.body.guardianResAdd,
-          guardianRel: req.body.guardianRel,
-          matricNumber: req.body.matricNumber,
-          password: req.body.password,
-          passwordConfirm: req.body.passwordConfirm,
-          healthHistory: req.body.healthHistory,
-        };
-      }
-      // pick student reg data data body
-      const user = await User.create(userReqBody);
+// sign up controller
+const studentSignup = async (req, res, next) => {
+  try {
+    //   if user model is passed in get student request body{
+    const reqBody = {
+      surname: req.body.surname,
+      otherNames: req.body.otherNames,
+      yearOfAdmission: req.body.yearOfAdmission,
+      faculty: req.body.faculty,
+      department: req.body.department,
+      religion: req.body.religion,
+      telPhone: req.body.telPhone,
+      homeAddress: req.body.homeAddress,
+      gender: req.body.gender,
+      dateOfBirth: req.body.dateOfBirth,
+      nationality: req.body.nationality,
+      ethnicGroup: req.body.ethnicGroup,
+      maritalStatus: req.body.maritalStatus,
+      guardianName: req.body.guardianName,
+      guardianOffAdd: req.body.guardianOffAdd,
+      guardianTelNum: req.body.guardianTelNum,
+      guardianResAdd: req.body.guardianResAdd,
+      guardianRel: req.body.guardianRel,
+      matricNumber: req.body.matricNumber,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm,
+      healthHistory: req.body.healthHistory,
+    };
 
-      //sign token
-      const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-        expiresIn: process.env.JWT_EXPIRES_IN,
-      });
+    console.log(reqBody);
+    // pick student reg data data body
+    const user = await Student.create(reqBody);
 
-      // send token in cookie
-      res.cookie("jwt", token, {
-        expiresIn: new Date(
-          Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-        ),
-      });
+    //sign token
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    });
 
-      // hide password from response
-      user.password = undefined;
+    // send token in cookie
+    res.cookie("jwt", token, {
+      expiresIn: new Date(
+        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      ),
+    });
 
-      res.status(201).json({
-        status: "success",
-        message: "student successfully registered",
-        data: {
-          user,
-        },
-      });
-    } catch (err) {
-      err.statusCode = 400;
-      err.status = "failed";
+    // hide password from response
+    user.password = undefined;
 
-      return next(err);
-    }
-  };
+    res.status(201).json({
+      status: "success",
+      message: "student successfully registered",
+      data: {
+        user,
+      },
+    });
+  } catch (err) {
+    err.statusCode = 400;
+    err.status = "failed";
+
+    return next(err);
+  }
 };
 
 const studentLogin = async (req, res, next) => {
@@ -146,62 +118,104 @@ const studentLogin = async (req, res, next) => {
   } catch (err) {
     err.statusCode = 400;
     err.status = "failed";
-
-    next(err);
   }
 };
 
-const protect = (user) => {
-  return async (req, res, next) => {
-    try {
-      let token;
+const protectStudent = async (req, res, next) => {
+  try {
+    let token;
 
-      // get bearer token from header
-      if (
-        req.headers.authorization &&
-        req.headers.authorization.startsWith("Bearer")
-      ) {
-        token = req.headers.authorization.split(" ")[1];
-      }
-
-      // if no token unauthorized
-      if (!token) {
-        const err = new Error("You are not logged in. Please log in");
-        err.statusCode = 401;
-        err.status = "failed";
-
-        return next(err);
-      }
-
-      // decode token
-      const decoded = await promisify(jwt.verify)(
-        token,
-        process.env.JWT_SECRET
-      );
-
-      // find student by id in payload
-      const decoded_student = await user.findById(decoded.id);
-
-      console.log(decoded_user);
-
-      // unauthorized if student id not found
-      if (!decoded_student) {
-        const err = new Error("This student never did or no longer exist");
-        err.statusCode = 401;
-        err.status = "failed";
-
-        return next(err);
-      }
-
-      // add decoded student to req object
-      req.student = decoded_student;
-
-      next();
-    } catch (err) {
-      err.statusCode = 400;
-      err.status = "failed";
+    // get bearer token from header
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer")
+    ) {
+      token = req.headers.authorization.split(" ")[1];
     }
-  };
+
+    // if no token unauthorized
+    if (!token) {
+      const err = new Error("You are not logged in. Please log in");
+      err.statusCode = 401;
+      err.status = "failed";
+
+      return next(err);
+    }
+
+    // decode token
+    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
+    // find student by id in payload
+    const decoded_student = await Student.findById(decoded.id);
+
+    console.log(decoded_student);
+
+    // unauthorized if student id not found
+    if (!decoded_student) {
+      const err = new Error("This student never did or no longer exist");
+      err.statusCode = 401;
+      err.status = "failed";
+
+      return next(err);
+    }
+
+    // add decoded student to req object
+    req.student = decoded_student;
+
+    next();
+  } catch (err) {
+    err.statusCode = 400;
+    err.status = "failed";
+  }
 };
 
-export { studentSignup, studentLogin, protect, signup };
+const staffSignup = async (req, res, next) => {
+  try {
+    const reqBody = {
+      staffNo: req.body.staffNo,
+      surname: req.body.surname,
+      otherNames: req.body.otherNames,
+      dateOfBirth: req.body.dateOfBirth,
+      maritalStatus: req.body.maritalStatus,
+      occupation: req.body.occupation,
+      department: req.body.department,
+      gender: req.body.gender,
+      nationality: req.body.nationality,
+      homeAddress: req.body.homeAddress,
+      telPhone: req.body.telPhone,
+      religion: req.body.religion,
+      ethnicGroup: req.body.ethnicGroup,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm,
+    };
+
+    const staff = await Staff.create(reqBody);
+
+    const token = jwt.sign({ id: staff.id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    });
+
+    res.cookie("jwt", token, {
+      expiresIn: new Date(
+        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      ),
+    });
+
+    staff.password = undefined;
+
+    res.status(201).json({
+      status: "success",
+      message: "satff successfully registered",
+      data: {
+        staff,
+      },
+    });
+  } catch (err) {
+    err.statusCode = 400;
+    err.status = "failed";
+
+    return next(err);
+  }
+};
+
+export { studentLogin, protectStudent, studentSignup, staffSignup };
