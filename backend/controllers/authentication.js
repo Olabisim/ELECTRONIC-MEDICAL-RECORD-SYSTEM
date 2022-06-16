@@ -265,4 +265,55 @@ const staffLogin = async (req, res, next) => {
   }
 };
 
-export { studentLogin, protectStudent, studentSignup, staffSignup, staffLogin };
+const protectStaff = async (req, res, next) => {
+  try {
+    let token;
+
+    // get bearer token from header
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer")
+    ) {
+      token = req.headers.authorization.split(" ")[1];
+    }
+
+    // if no token unauthorized
+    if (!token) {
+      const err = new Error("You are not logged in. Please log in");
+      err.statusCode = 401;
+      err.status = "failed";
+
+      return next(err);
+    }
+
+    // decode token
+    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
+    const decoded_staff = await Staff.findById(decoded.id);
+
+    if (!decoded_staff) {
+      const err = new Error("This staff never did or no longer exist");
+      err.statusCode = 401;
+      err.status = "failed";
+
+      return next(err);
+    }
+
+    // add decoded student to req object
+    req.staff = decoded_staff;
+
+    next();
+  } catch (err) {
+    err.statusCode = 400;
+    err.status = "failed";
+  }
+};
+
+export {
+  studentLogin,
+  protectStudent,
+  studentSignup,
+  staffSignup,
+  staffLogin,
+  protectStaff,
+};
