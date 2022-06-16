@@ -101,6 +101,14 @@ staffSchema.pre("save", async function (next) {
   this.passwordConfirm = undefined;
 });
 
+// comparepassword instance
+staffSchema.methods.comparePasswords = async function (
+  inputPassword,
+  staffPassword
+) {
+  return await bcryptjs.compare(inputPassword, staffPassword);
+};
+
 const Staff = model("Staff", staffSchema);
 
 export default Staff;

@@ -34,7 +34,6 @@ const studentSignup = async (req, res, next) => {
       healthHistory: req.body.healthHistory,
     };
 
-    console.log(reqBody);
     // pick student reg data data body
     const user = await Student.create(reqBody);
 
@@ -148,8 +147,6 @@ const protectStudent = async (req, res, next) => {
     // find student by id in payload
     const decoded_student = await Student.findById(decoded.id);
 
-    console.log(decoded_student);
-
     // unauthorized if student id not found
     if (!decoded_student) {
       const err = new Error("This student never did or no longer exist");
@@ -218,4 +215,54 @@ const staffSignup = async (req, res, next) => {
   }
 };
 
-export { studentLogin, protectStudent, studentSignup, staffSignup };
+const staffLogin = async (req, res, next) => {
+  try {
+    const { staffNo, password } = req.body;
+
+    // matric no and password passed in?
+    if (!staffNo || !password) {
+      const err = new Error("Fill staff number and password");
+      err.statusCode = 400;
+      err.status = "failed";
+
+      return next(err);
+    }
+
+    // get student with matric numeber and also making password accessible since we made the select property false on the model definition
+    const staff = await Staff.findOne({
+      staffNo,
+    }).select("+password");
+
+    // no student with the matric number or inputted password not matching with student confirmed password
+    if (!staff || !(await staff.comparePasswords(password, staff.password))) {
+      const err = new Error("Incorrect staff number or password");
+      err.statusCode = 400;
+      err.status = "failed";
+
+      return next(err);
+    }
+
+    const token = jwt.sign({ id: staff.id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    });
+
+    res.cookie("jwt", token, {
+      expiresIn: new Date(
+        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      ),
+    });
+
+    res.status(200).json({
+      status: "success",
+      token,
+      data: {
+        staff,
+      },
+    });
+  } catch (err) {
+    err.statusCode = 400;
+    err.status = "failed";
+  }
+};
+
+export { studentLogin, protectStudent, studentSignup, staffSignup, staffLogin };
