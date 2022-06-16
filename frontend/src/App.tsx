@@ -4,12 +4,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './page/Home'
 import { Staff } from './page/staff/Staff'
 import { Login } from './page/Login'
-import { Student } from './page/student/Student'
 import { Stats } from './page/admin/Stats';
-import { StudentRegister } from './page/student/StudentRegister';
 import { Admin } from './page/admin/Home';
 import { AdminStudent } from './page/admin/Student';
 import { DefaultLogin } from './components/DefaultLogin';
+
+// STUDENT 
+import { Student } from './page/student/Student'
+import { StudentRegister } from './page/student/StudentRegister';
+import { StudentPrint } from './page/student/StudentPrint';
 
 
 // DOCTOR 
@@ -67,7 +70,7 @@ function App() {
                                 <Route path="/student/login" element={<Login />} /> 
                                 <Route path="/student/register" element={<StudentRegister />} /> 
                                 <Route path="/student" element={<Student />} /> 
-                                <Route path="/student/home" element={<Home />} />
+                                <Route path="/student/print" element={<StudentPrint />} />
 
                                 {/* ATTENDEE */}
                                 
