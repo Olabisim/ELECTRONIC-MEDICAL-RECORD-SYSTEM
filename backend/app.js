@@ -15,9 +15,6 @@ const app = express();
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 
-
-
-
 // CORS PROBLEM ALLOWING FRONTEND TO PROCESS HTTP METHODS
 
 app.use(cors());
@@ -42,34 +39,28 @@ app.use(function (req, res, next) {
 
 // CORS PROBLEM END
 
-<<<<<<< HEAD
 // students routes
-=======
-
-
->>>>>>> 62fdd5ce01c572c1e0bbde1ce9ca2ee6e3a79dbd
-app.use("/api/v1/student", studentRoutes);
+app.use("/api/v1/studentqq", studentRoutes);
 // staffs routes
 app.use("/api/v1/staff", staffRoutes);
 
 // unhandled routes
 app.all("*", (req, res, next) => {
-        res.status(404).json({
-                status: "fail",
-                message: `Can't find url on this server`,
-        });
+  res.status(404).json({
+    status: "fail",
+    message: `Can't find url on this server`,
+  });
 });
 
 // global error handler
 app.use((err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || "error";
 
-        err.statusCode = err.statusCode || 500;
-        err.status = err.status || "error";
-
-        res.status(err.statusCode).json({
-                status: err.status,
-                message: err.message,
-        });
+  res.status(err.statusCode).json({
+    status: err.status,
+    message: err.message,
+  });
 });
 
 export default app;
