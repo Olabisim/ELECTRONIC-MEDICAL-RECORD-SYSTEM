@@ -65,7 +65,7 @@ const studentSignup = async (req, res, next) => {
 
 const studentLogin = async (req, res, next) => {
   try {
-    const { matricNumber, password } = req.body;
+    const { matricNumber, password } = req.body
 
     // matric no and password passed in?
     if (!matricNumber || !password) {
@@ -118,6 +118,36 @@ const studentLogin = async (req, res, next) => {
   }
 };
 
+
+
+const studentLogout = async (req, res, next) => {
+
+
+    res.cookie("jwt", '', { expiresIn: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN
+    ) });
+
+    console.log("logged out successfully")
+
+  
+  // try {
+    
+  //   res.cookie("jwt", '', { expiresIn: new Date(
+  //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN
+  //   ) });
+
+  // } 
+  
+  // catch (err) {
+  //   err.statusCode = 400;
+  //   err.status = "failed to logout";
+
+  //   next(err);
+  // }
+};
+
+
+
 const protect = async (req, res, next) => {
   try {
     let token;
@@ -164,4 +194,4 @@ const protect = async (req, res, next) => {
   }
 };
 
-export { studentSignup, studentLogin, protect };
+export { studentSignup, studentLogin, protect, studentLogout };
