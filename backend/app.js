@@ -5,15 +5,15 @@ const __dirname = dirname(__filename);
 
 import express from "express";
 import cors from "cors";
+
+// routes
 import studentRoutes from "./routes/students.js";
+import staffRoutes from "./routes/staffs.js";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
-
-
-
 
 // CORS PROBLEM ALLOWING FRONTEND TO PROCESS HTTP METHODS
 
@@ -39,28 +39,35 @@ app.use(function (req, res, next) {
 
 // CORS PROBLEM END
 
-
-
-app.use("/api/v1/student", studentRoutes);
+// students routes
+app.use("/api/v1/studentqq", studentRoutes);
+// staffs routes
+app.use("/api/v1/staff", staffRoutes);
 
 // unhandled routes
 app.all("*", (req, res, next) => {
+<<<<<<< HEAD
         res.status(404).json({
                 status: "fail",
                 message: `Can't find ${req.originalUrl} on this server`,
         });
+=======
+  res.status(404).json({
+    status: "fail",
+    message: `Can't find url on this server`,
+  });
+>>>>>>> 55ea4ef1508a693b06cdf5450d118fe4e4ca2171
 });
 
 // global error handler
 app.use((err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || "error";
 
-        err.statusCode = err.statusCode || 500;
-        err.status = err.status || "error";
-
-        res.status(err.statusCode).json({
-                status: err.status,
-                message: err.message,
-        });
+  res.status(err.statusCode).json({
+    status: err.status,
+    message: err.message,
+  });
 });
 
 export default app;

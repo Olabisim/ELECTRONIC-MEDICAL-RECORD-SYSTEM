@@ -1,5 +1,3 @@
-import Student from "../models/Student.js";
-
 const getStudent = (req, res) => {
 
         try {

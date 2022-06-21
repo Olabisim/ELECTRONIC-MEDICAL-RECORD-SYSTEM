@@ -1,49 +1,114 @@
 import mongoose from "mongoose";
-import {Schema, model } from mongoose;
+const { Schema, model } = mongoose;
+import bcryptjs from "bcryptjs";
 
 const staffSchema = new Schema({
-    staff_no: {
-        type: String,
-        unique: [true, "No two staff can have the same id"],
+  staffNo: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  surname: {
+    type: String,
+    required: [true, "Please provide a surname"],
+  },
+  otherNames: {
+    type: String,
+    required: [true, "Please provide other names"],
+  },
+  dateOfBirth: {
+    type: Date,
+    required: [true, "Provide date of birth"],
+  },
+  maritalStatus: {
+    type: String,
+    enum: {
+      values: ["married", "single", "divorced"],
+      message: "please enter either married, single or divorced",
     },
-    surname: {
-        type: String,
-        require: [true, "Please provide a surname"]
+    required: [true, "Provide marital status"],
+  },
+  department: {
+    type: String,
+    required: [true, "Please provide a department"],
+  },
+  gender: {
+    type: String,
+    required: [true, "Please provide a surname"],
+    enum: {
+      values: ["male", "female"],
+      message: "only male and female allowed",
     },
-    other_names: {
-        type: Array,
-        require: [true, "Please provide other names"]
+  },
+  nationality: {
+    type: String,
+    default: "Nigerian",
+    required: [true, "Please provide nationality"],
+  },
+  homeAddress: {
+    type: String,
+    required: [true, "Provide home address"],
+  },
+  telPhone: {
+    type: String,
+    required: [true, "Provide telephone number"],
+  },
+  religion: {
+    type: String,
+    required: [true, "Provide you religion"],
+  },
+  ethnicGroup: {
+    type: String,
+    required: [true, "Provide your ethnic group"],
+  },
+  password: {
+    type: String,
+    required: [true, "Enter password"],
+    select: false,
+    minlength: [8, "password must be atleast 8 characters long"],
+  },
+  passwordConfirm: {
+    type: String,
+    required: [true, "Enter password again to confirm"],
+    validate: {
+      validator: function (cPassword) {
+        return cPassword == this.password;
+      },
+      message: "Passwords don't match",
     },
-    dob: {
-        type: date,
-        require: [true, "Provide date of birth"]
+  },
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
+  },
+  userType: {
+    type: String,
+    enum: {
+      values: ["staff"],
+      message: "User has to be a staff",
     },
-    married: {
-        type: Boolean,
-        require: [true, "Provide marital status"]
-    },
-    occupation: {
-        type: String,
-        require: [true, "Provide occupation"]
-    },
-    department: {
-        type: String,
-        require: [true, "Please provide a department"]
-    },
-    sex: {
-        type: String,
-        require: [true, "Please provide a surname"],
-        enum: ["male", "female"]
-    },
-    nationality: {
-        type: String,
-        default: "Nigerian",
-        require: [true, "Please provide nationality"]
-    }
+    default: "staff",
+  },
+});
 
-})
+// encrypt pword pre-save middleeware
+staffSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
 
+  this.password = await bcryptjs.hash(this.password, 12);
 
-const Staff = model("Staff", staffSchema)
+  this.passwordConfirm = undefined;
+});
 
-export default Staff
+// comparepassword instance
+staffSchema.methods.comparePasswords = async function (
+  inputPassword,
+  staffPassword
+) {
+  return await bcryptjs.compare(inputPassword, staffPassword);
+};
+
+const Staff = model("Staff", staffSchema);
+
+export default Staff;
