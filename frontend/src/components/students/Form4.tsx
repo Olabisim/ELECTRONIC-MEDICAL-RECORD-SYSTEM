@@ -69,7 +69,27 @@ export const Form4 = () => {
 
                                 {/* <Link to="/student/fifth"> */}
                         
-                                        <button className="stats button" style={{marginLeft: "65px"}} onClick={() => dispatch(incrementCount())} >next</button>
+                                        <button 
+                                                className="stats button" 
+                                                style={{marginLeft: "65px"}} 
+                                                onClick={() => dispatch(incrementCount())} 
+                                                disabled={
+                                                                       
+                                                        nameLG === '' 
+                                                        || 
+                                                        relationshipLG === '' 
+                                                        || 
+                                                        officeAddressLG === '' 
+                                                        || 
+                                                        telephoneNoLG === '' 
+                                                        || 
+                                                        residenceLG === '' 
+                                                        ?
+                                                        true 
+                                                        : 
+                                                        false
+                                                }
+                                        >next</button>
                                         
                                 {/* </Link> */}
                                 

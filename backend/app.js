@@ -46,17 +46,10 @@ app.use("/api/v1/staff", staffRoutes);
 
 // unhandled routes
 app.all("*", (req, res, next) => {
-<<<<<<< HEAD
-        res.status(404).json({
-                status: "fail",
-                message: `Can't find ${req.originalUrl} on this server`,
-        });
-=======
   res.status(404).json({
     status: "fail",
     message: `Can't find url on this server`,
   });
->>>>>>> 55ea4ef1508a693b06cdf5450d118fe4e4ca2171
 });
 
 // global error handler

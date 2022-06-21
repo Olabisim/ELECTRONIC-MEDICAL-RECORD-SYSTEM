@@ -16,7 +16,7 @@ export const Form1 = () => {
         const [ faculty, setFaculty ] = useState<string>('')
         const [ department, setDepartment ] = useState<string>('')
         const [ religion, setReligion ] = useState<string>('')
-        const [ date, setDate ] = useState<string>('')
+        const [ dateOfBirth, setDateOfBirth ] = useState<string>('')
         const [ office, setOffice ] = useState<string>('')
 
         // console.log(name)
@@ -67,10 +67,12 @@ export const Form1 = () => {
                                                         <label htmlFor="religion">religion:</label>
                                                         <input type="text" value={religion} onChange={(e) => setReligion(e.target.value)} required />
                   
-                                                </div>                                
+                                                </div> 
+
+                                                
                                                 <div className="input-field">
-                                                        <label htmlFor="date">date:</label>
-                                                        <input type="text" value={date} onChange={(e) => setDate(e.target.value)} required />
+                                                        <label htmlFor="Date_of_Birth">Date of Birth:</label>
+                                                        <input type="text" value={dateOfBirth} id="some" onChange={(e) => setDateOfBirth(e.target.value)} required />
                                                 </div>
                 
                                                 <div className="input-field">
@@ -86,7 +88,33 @@ export const Form1 = () => {
                                                 
                                                 {/* <Link to="/student/second"> */}
                                         
-                                                        <button className="stats button" style={{marginLeft: "65px"}} onClick={() => dispatch(incrementCount()) } >next</button>
+                                                        <button 
+                                                                className="stats button" 
+                                                                style={{marginLeft: "65px"}} 
+                                                                onClick={() => dispatch(incrementCount()) } 
+                                                                disabled={
+                                                                       
+                                                                        surname === '' 
+                                                                        || 
+                                                                        otherName === '' 
+                                                                        || 
+                                                                        yearOfAdmission === '' 
+                                                                        || 
+                                                                        faculty === '' 
+                                                                        || 
+                                                                        department === '' 
+                                                                        || 
+                                                                        religion === '' 
+                                                                        || 
+                                                                        dateOfBirth === '' 
+                                                                        || 
+                                                                        office === '' 
+                                                                        ?
+                                                                        true 
+                                                                        : 
+                                                                        false
+                                                                }
+                                                        >next</button>
                                                         
                                                 {/* </Link> */}
                                         </div>

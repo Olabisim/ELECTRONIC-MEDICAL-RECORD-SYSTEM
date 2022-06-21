@@ -15,7 +15,6 @@ export const Form2 = () => {
         const [ homeAddress, setHomeAddress ] = useState<string>('')
         const [ gender, setGender ] = useState<string>('')
         const [ age, setAge ] = useState<string>('')
-        const [ dateOfBirth, setDateOfBirth ] = useState<string>('')
         const [ nationality, setNationality ] = useState<string>('')
         const [ ethnicGroup, setEthnicGroup ] = useState<string>('')
         const [ maritalSatus, setMaritalStatus ] = useState<string>('')
@@ -44,11 +43,6 @@ export const Form2 = () => {
                                 <div className="input-field">
                                         <label htmlFor="gender">gender:</label>
                                         <input type="text" value={gender} id="some" onChange={(e) => setGender(e.target.value)} required />
-                                </div>
-                                
-                                <div className="input-field">
-                                        <label htmlFor="Date_of_Birth">Date of Birth:</label>
-                                        <input type="text" value={dateOfBirth} id="some" onChange={(e) => setDateOfBirth(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">
@@ -89,7 +83,33 @@ export const Form2 = () => {
 
                                 {/* <Link to="/student/fourth"> */}
                         
-                                        <button className="stats button" style={{marginLeft: "65px"}}  onClick={() => dispatch(incrementCount())} >next</button>
+                                        <button 
+                                        className="stats button" 
+                                        style={{marginLeft: "65px"}}  
+                                        onClick={() => dispatch(incrementCount())} 
+                                        disabled={
+                                                                       
+                                                homeAddress === '' 
+                                                || 
+                                                gender === '' 
+                                                || 
+                                                age === '' 
+                                                || 
+                                                nationality === '' 
+                                                || 
+                                                ethnicGroup === '' 
+                                                || 
+                                                maritalSatus === '' 
+                                                || 
+                                                fatherTelNo === '' 
+                                                || 
+                                                motherTelNo === '' 
+                                                ?
+                                                true 
+                                                : 
+                                                false
+                                        }
+                                        >next</button>
                                         
                                 {/* </Link> */}
 
