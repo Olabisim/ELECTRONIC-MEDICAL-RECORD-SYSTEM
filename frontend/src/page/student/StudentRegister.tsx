@@ -14,6 +14,7 @@ export const StudentRegister = () => {
 
 
         const count = useAppSelector(state => state.student.count)
+        const surname = useAppSelector(state => state.student.studentData.surname)
 
         const dispatch = useAppDispatch()
 
@@ -34,7 +35,7 @@ export const StudentRegister = () => {
                                                                         NOTE:: students must report to the Health Center to take measurements for completion of the registration.
                                                                 </p>
                                                                 
-                                                                <button className="stats button " onClick={() => dispatch(incrementCount())}>START REGISTRATION </button>
+                                                                <button className="stats button " onClick={() => dispatch(incrementCount({}))}>START REGISTRATION </button>
                                                                 <div>
                                                                         <button  className="StudentRegister_link">
 

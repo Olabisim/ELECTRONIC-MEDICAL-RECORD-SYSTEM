@@ -10,6 +10,12 @@ function PresentComplaints() {
         const [presentComplaint, setPresentComplaint] = useState<string>('')
 
         const count = useAppSelector(state => state.student.count)
+        const studentData = useAppSelector(state => state.student.studentData)
+
+        const {
+                surname, otherNames, yearOfAdmission, faculty, department, religion,
+                homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone,
+                guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd } = studentData
 
         const dispatch = useAppDispatch()
 
@@ -46,7 +52,10 @@ function PresentComplaints() {
 
                                 {/* <Link to="/student/fifth"> */}
                         
-                                        <button className="stats button" style={{marginLeft: "65px"}} onClick={() => dispatch(incrementCount())} >next</button>
+                                        <button className="stats button" style={{marginLeft: "65px"}} onClick={() => dispatch(incrementCount({
+                                                        surname, otherNames, yearOfAdmission, faculty, department, religion,
+                                                        homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone,
+                                                        guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd}))} >next</button>
                                         
                                 {/* </Link> */}
                                 

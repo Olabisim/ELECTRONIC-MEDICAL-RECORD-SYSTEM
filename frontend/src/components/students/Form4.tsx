@@ -9,17 +9,21 @@ export const Form4 = () => {
 
 
         const count = useAppSelector(state => state.student.count)
+        const studentData = useAppSelector(state => state.student.studentData)
+
+        
+        const {surname, otherNames, yearOfAdmission, faculty, department, religion, homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone } = studentData
 
         const dispatch = useAppDispatch()
 
         // all LG means LOCAL GUARDIAN 
-        const [nameLG, setNameLG] = useState<string>('')
-        const [relationshipLG, setRelationshipLG] = useState<string>('')
-        const [officeAddressLG, setOfficeAddressLG] = useState<string>('')
-        const [telephoneNoLG, setTelephoneNoLG] = useState<string>('')
-        const [residenceLG, setResidenceLG] = useState<string>('')
+        const [guardianName, setguardianName] = useState<string>('')
+        const [guardianRel, setguardianRel] = useState<string>('')
+        const [guardianOffAdd, setguardianOffAdd] = useState<string>('')
+        const [guardianTelNum, setguardianTelNum] = useState<string>('')
+        const [guardianResAdd, setguardianResAdd] = useState<string>('')
  
-        // console.log(nameLG)
+        // console.log(guardianName)
 
         return (
                 <div className="form_root main">
@@ -37,27 +41,27 @@ export const Form4 = () => {
                                 
                                 <div className="input-field">
                                         <label htmlFor="Name">Name:</label>
-                                        <input type="text" value={nameLG} onChange={(e) => setNameLG(e.target.value)} required />
+                                        <input type="text" value={guardianName} onChange={(e) => setguardianName(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">
                                         <label htmlFor="relationship">relationship:</label>
-                                        <input type="text" value={relationshipLG} onChange={(e) => setRelationshipLG(e.target.value)} required />
+                                        <input type="text" value={guardianRel} onChange={(e) => setguardianRel(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">
                                         <label htmlFor="office_address">office_address:</label>
-                                        <input type="text" value={officeAddressLG} onChange={(e) => setOfficeAddressLG(e.target.value)} required />
+                                        <input type="text" value={guardianOffAdd} onChange={(e) => setguardianOffAdd(e.target.value)} required />
                                 </div>
                                 
                                 <div className="input-field">
                                         <label htmlFor="Telephone_No">Telephone_No:</label>
-                                        <input type="text" value={telephoneNoLG} onChange={(e) => setTelephoneNoLG(e.target.value)} required />
+                                        <input type="text" value={guardianTelNum} onChange={(e) => setguardianTelNum(e.target.value)} required />
                                 </div> 
                                 
                                 <div className="input-field">
                                         <label htmlFor="Residence">Residence:</label>
-                                        <input type="text" value={residenceLG} onChange={(e) => setResidenceLG(e.target.value)} required />
+                                        <input type="text" value={guardianResAdd} onChange={(e) => setguardianResAdd(e.target.value)} required />
                                 </div>
 
                                 
@@ -72,18 +76,24 @@ export const Form4 = () => {
                                         <button 
                                                 className="stats button" 
                                                 style={{marginLeft: "65px"}} 
-                                                onClick={() => dispatch(incrementCount())} 
+                                                onClick={() => dispatch(incrementCount({
+                                                        
+                                                        surname, otherNames, yearOfAdmission, faculty, department, religion,
+                                                        homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone,
+                                                        guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd
+                                                        
+                                                }))} 
                                                 disabled={
                                                                        
-                                                        nameLG === '' 
+                                                        guardianName === '' 
                                                         || 
-                                                        relationshipLG === '' 
+                                                        guardianRel === '' 
                                                         || 
-                                                        officeAddressLG === '' 
+                                                        guardianOffAdd === '' 
                                                         || 
-                                                        telephoneNoLG === '' 
+                                                        guardianTelNum === '' 
                                                         || 
-                                                        residenceLG === '' 
+                                                        guardianResAdd === '' 
                                                         ?
                                                         true 
                                                         : 

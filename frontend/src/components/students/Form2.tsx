@@ -9,6 +9,9 @@ import { useState } from "react"
 export const Form2 = () => {
 
         const count = useAppSelector(state => state.student.count)
+        const studentData = useAppSelector(state => state.student.studentData)
+
+        const {surname, otherNames, yearOfAdmission, faculty, department, religion, telPhone} = studentData
 
         const dispatch = useAppDispatch()
 
@@ -17,7 +20,7 @@ export const Form2 = () => {
         const [ age, setAge ] = useState<string>('')
         const [ nationality, setNationality ] = useState<string>('')
         const [ ethnicGroup, setEthnicGroup ] = useState<string>('')
-        const [ maritalSatus, setMaritalStatus ] = useState<string>('')
+        const [ maritalStatus, setMaritalStatus ] = useState<string>('')
         const [ fatherTelNo, setFatherTelNo ] = useState<string>('')
         const [ motherTelNo, setMotherTelNo ] = useState<string>('')
 
@@ -62,7 +65,7 @@ export const Form2 = () => {
                                 
                                 <div className="input-field">
                                         <label htmlFor="marital_status">marital status:</label>
-                                        <input type="text" value={maritalSatus} id="some" onChange={(e) => setMaritalStatus(e.target.value)} required />
+                                        <input type="text" value={maritalStatus} id="some" onChange={(e) => setMaritalStatus(e.target.value)} required />
                                 </div>
 
                                 <div className="input-field">
@@ -86,7 +89,10 @@ export const Form2 = () => {
                                         <button 
                                         className="stats button" 
                                         style={{marginLeft: "65px"}}  
-                                        onClick={() => dispatch(incrementCount())} 
+                                        onClick={() => dispatch(incrementCount({
+                                                surname, otherNames, yearOfAdmission, faculty, department, religion, telPhone,
+                                                homeAddress, gender, age, nationality, ethnicGroup, maritalStatus, fatherTelNo, motherTelNo
+                                        }))} 
                                         disabled={
                                                                        
                                                 homeAddress === '' 
@@ -99,7 +105,7 @@ export const Form2 = () => {
                                                 || 
                                                 ethnicGroup === '' 
                                                 || 
-                                                maritalSatus === '' 
+                                                maritalStatus === '' 
                                                 || 
                                                 fatherTelNo === '' 
                                                 || 

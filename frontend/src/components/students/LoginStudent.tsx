@@ -1,12 +1,23 @@
 import React, {useRef, useState} from 'react'
 import '../../css/login.css'
 import {Link} from 'react-router-dom'
-
+import {useAppDispatch, useAppSelector} from '../../app/hooks'
 
 export const LoginStudent = () => {
 
         const [matricNoStudent, setMatricNoStudent] = useState<string>('')
         const [passwordStudent, setPasswordStudent] = useState<string>('')
+
+        
+        const studentData = useAppSelector(state => state.student.studentData)
+
+        const {
+                surname, otherNames, yearOfAdmission, faculty, department, religion,
+                homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone,
+                guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd } = studentData
+
+        const dispatch = useAppDispatch()
+
 
 
         const [toggle, setToggle] = useState<String>('rect2')
@@ -15,21 +26,25 @@ export const LoginStudent = () => {
         const password = useRef<HTMLInputElement>(null)
         const rect = useRef<SVGSVGElement>(null)
 
-        
-        const handle1 = () => {
-                
-                console.log(rect.current)
-                // console.log(rect.current.setAttribute)
-                // const { current } = rect;
-                setToggle('rect1')
-                // current.setAttribute("class", "rect2");
-        }
 
-        const handle2 = () => {
-                console.log("this is handle2")
-                // rect.setAttribute("class", "rect1");
-                setToggle('rect2')
+        const handleSubmit = () => {
+
         }
+        
+        // const handle1 = () => {
+                
+        //         console.log(rect.current)
+        //         // console.log(rect.current.setAttribute)
+        //         // const { current } = rect;
+        //         setToggle('rect1')
+        //         // current.setAttribute("class", "rect2");
+        // }
+
+        // const handle2 = () => {
+        //         console.log("this is handle2")
+        //         // rect.setAttribute("class", "rect1");
+        //         setToggle('rect2')
+        // }
 
         console.log(matricNoStudent)
 
@@ -66,7 +81,7 @@ export const LoginStudent = () => {
                         />
 
                         <Link to="/student">
-                                <button className='Login button'>CREATE</button>
+                                <button className='Login button' onClick={() => handleSubmit}>CREATE</button>
                         </Link>
 
                         {/* <div className="Login_info_down">

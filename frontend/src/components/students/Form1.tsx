@@ -11,13 +11,14 @@ export const Form1 = () => {
         const dispatch = useAppDispatch()
 
         const [ surname, setSurname ] = useState<string>('')
-        const [ otherName, setOtherName ] = useState<string>('')
+        const [ otherNames, setOtherName ] = useState<string>('')
         const [ yearOfAdmission, setYearOfAdmission ] = useState<string>('')
         const [ faculty, setFaculty ] = useState<string>('')
         const [ department, setDepartment ] = useState<string>('')
         const [ religion, setReligion ] = useState<string>('')
         const [ dateOfBirth, setDateOfBirth ] = useState<string>('')
-        const [ office, setOffice ] = useState<string>('')
+        const [ telPhone, settelPhone ] = useState<string>('')
+        // const [ office, setOffice ] = useState<string>('')
 
         // console.log(name)
 
@@ -45,7 +46,7 @@ export const Form1 = () => {
                                                 
                                                 <div className="input-field">
                                                         <label htmlFor="other_name">other names:</label>
-                                                        <input type="text" value={otherName} onChange={(e) => setOtherName(e.target.value)} required />
+                                                        <input type="text" value={otherNames} onChange={(e) => setOtherName(e.target.value)} required />
                                                 </div>
                                                 
                                                 <div className="input-field">
@@ -68,6 +69,11 @@ export const Form1 = () => {
                                                         <input type="text" value={religion} onChange={(e) => setReligion(e.target.value)} required />
                   
                                                 </div> 
+                                                <div className="input-field">
+                                                        <label htmlFor="religion">Telephone Number:</label>
+                                                        <input type="text" value={telPhone} onChange={(e) => settelPhone(e.target.value)} required />
+                  
+                                                </div> 
 
                                                 
                                                 <div className="input-field">
@@ -75,10 +81,10 @@ export const Form1 = () => {
                                                         <input type="text" value={dateOfBirth} id="some" onChange={(e) => setDateOfBirth(e.target.value)} required />
                                                 </div>
                 
-                                                <div className="input-field">
+                                                {/* <div className="input-field">
                                                         <label htmlFor="office_address">office address:</label>
                                                         <input type="text" value={office} onChange={(e) => setOffice(e.target.value)} required />
-                                                </div>
+                                                </div> */}
                 
                                                 {/* <Link to="/student/fourth"> */}
                                         
@@ -91,12 +97,12 @@ export const Form1 = () => {
                                                         <button 
                                                                 className="stats button" 
                                                                 style={{marginLeft: "65px"}} 
-                                                                onClick={() => dispatch(incrementCount()) } 
+                                                                onClick={() => dispatch(incrementCount({surname, otherNames, yearOfAdmission, faculty, department, religion, telPhone})) } 
                                                                 disabled={
                                                                        
                                                                         surname === '' 
                                                                         || 
-                                                                        otherName === '' 
+                                                                        otherNames === '' 
                                                                         || 
                                                                         yearOfAdmission === '' 
                                                                         || 
@@ -107,8 +113,8 @@ export const Form1 = () => {
                                                                         religion === '' 
                                                                         || 
                                                                         dateOfBirth === '' 
-                                                                        || 
-                                                                        office === '' 
+                                                                        // || 
+                                                                        // office === '' 
                                                                         ?
                                                                         true 
                                                                         : 
