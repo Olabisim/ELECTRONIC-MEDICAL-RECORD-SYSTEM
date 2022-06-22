@@ -144,16 +144,6 @@ const studentSchema = new Schema({
     minlength: [8, "Password must be atleast 8 characters long"],
     select: false,
   },
-  passwordConfirm: {
-    type: String,
-    required: [true, "Enter password again to confirm"],
-    validate: {
-      validator: function (cPassword) {
-        return cPassword == this.password;
-      },
-      message: "Passwords doesn't match",
-    },
-  },
   active: {
     type: Boolean,
     default: true,

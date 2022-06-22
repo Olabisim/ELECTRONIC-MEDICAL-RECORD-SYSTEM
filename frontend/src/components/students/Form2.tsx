@@ -93,28 +93,28 @@ export const Form2 = () => {
                                                 surname, otherNames, yearOfAdmission, faculty, department, religion, telPhone,
                                                 homeAddress, gender, age, nationality, ethnicGroup, maritalStatus, fatherTelNo, motherTelNo
                                         }))} 
-                                        disabled={
+                                        // disabled={
                                                                        
-                                                homeAddress === '' 
-                                                || 
-                                                gender === '' 
-                                                || 
-                                                age === '' 
-                                                || 
-                                                nationality === '' 
-                                                || 
-                                                ethnicGroup === '' 
-                                                || 
-                                                maritalStatus === '' 
-                                                || 
-                                                fatherTelNo === '' 
-                                                || 
-                                                motherTelNo === '' 
-                                                ?
-                                                true 
-                                                : 
-                                                false
-                                        }
+                                        //         homeAddress === '' 
+                                        //         || 
+                                        //         gender === '' 
+                                        //         || 
+                                        //         age === '' 
+                                        //         || 
+                                        //         nationality === '' 
+                                        //         || 
+                                        //         ethnicGroup === '' 
+                                        //         || 
+                                        //         maritalStatus === '' 
+                                        //         || 
+                                        //         fatherTelNo === '' 
+                                        //         || 
+                                        //         motherTelNo === '' 
+                                        //         ?
+                                        //         true 
+                                        //         : 
+                                        //         false
+                                        // }
                                         >next</button>
                                         
                                 {/* </Link> */}

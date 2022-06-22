@@ -98,28 +98,28 @@ export const Form1 = () => {
                                                                 className="stats button" 
                                                                 style={{marginLeft: "65px"}} 
                                                                 onClick={() => dispatch(incrementCount({surname, otherNames, yearOfAdmission, faculty, department, religion, telPhone})) } 
-                                                                disabled={
+                                                                // disabled={
                                                                        
-                                                                        surname === '' 
-                                                                        || 
-                                                                        otherNames === '' 
-                                                                        || 
-                                                                        yearOfAdmission === '' 
-                                                                        || 
-                                                                        faculty === '' 
-                                                                        || 
-                                                                        department === '' 
-                                                                        || 
-                                                                        religion === '' 
-                                                                        || 
-                                                                        dateOfBirth === '' 
-                                                                        // || 
-                                                                        // office === '' 
-                                                                        ?
-                                                                        true 
-                                                                        : 
-                                                                        false
-                                                                }
+                                                                //         surname === '' 
+                                                                //         || 
+                                                                //         otherNames === '' 
+                                                                //         || 
+                                                                //         yearOfAdmission === '' 
+                                                                //         || 
+                                                                //         faculty === '' 
+                                                                //         || 
+                                                                //         department === '' 
+                                                                //         || 
+                                                                //         religion === '' 
+                                                                //         || 
+                                                                //         dateOfBirth === '' 
+                                                                //         // || 
+                                                                //         // office === '' 
+                                                                //         ?
+                                                                //         true 
+                                                                //         : 
+                                                                //         false
+                                                                // }
                                                         >next</button>
                                                         
                                                 {/* </Link> */}

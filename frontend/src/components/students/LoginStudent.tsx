@@ -1,12 +1,13 @@
 import React, {useRef, useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../css/login.css'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
 
 export const LoginStudent = () => {
 
-        const [matricNoStudent, setMatricNoStudent] = useState<string>('')
-        const [passwordStudent, setPasswordStudent] = useState<string>('')
+        const [matricNumber, setmatricNumber] = useState<string>('')
+        const [password, setpassword] = useState<string>('')
 
         
         const studentData = useAppSelector(state => state.student.studentData)
@@ -14,20 +15,64 @@ export const LoginStudent = () => {
         const {
                 surname, otherNames, yearOfAdmission, faculty, department, religion,
                 homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone,
-                guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd } = studentData
+                guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd, dateOfBirth } = studentData
 
         const dispatch = useAppDispatch()
+        const navigate = useNavigate()
 
+        const studentRegData = {
+                surname, 
+                otherNames, 
+                yearOfAdmission, 
+                faculty, 
+                department, 
+                religion,
+                homeAddress, 
+                gender, 
+                nationality, 
+                ethnicGroup, 
+                maritalStatus, 
+                telPhone,
+                guardianName, 
+                guardianRel, 
+                guardianOffAdd, 
+                guardianTelNum, 
+                guardianResAdd,
+                matricNumber,
+                password,
+                dateOfBirth
+        }
+        
 
+        // const [toggle, setToggle] = useState<String>('rect2')
 
-        const [toggle, setToggle] = useState<String>('rect2')
+        // const matricNo = useRef<HTMLInputElement>(null)
+        // const password = useRef<HTMLInputElement>(null)
+        // const rect = useRef<SVGSVGElement>(null)
 
-        const matricNo = useRef<HTMLInputElement>(null)
-        const password = useRef<HTMLInputElement>(null)
-        const rect = useRef<SVGSVGElement>(null)
+        const options = {
+                method: 'POST',
+                headers: {
+                        'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(studentRegData)
 
+        }
 
         const handleSubmit = () => {
+                fetch('http://localhost:7000/api/v1/studentqq/signup', options)
+                .then(res => res.json())
+                .then(data => {
+                        console.log(data.message)
+                        navigate('/student')
+                })
+                .catch((err) => {
+                        console.log(err)
+                        console.log(err.message)
+                        console.log("error")
+                        console.log(err)
+                        console.log(err.message)
+                })
 
         }
         
@@ -46,7 +91,7 @@ export const LoginStudent = () => {
         //         setToggle('rect2')
         // }
 
-        console.log(matricNoStudent)
+        console.log(matricNumber)
 
         return(
                 <div className="Login_container_for_flex">
@@ -58,31 +103,44 @@ export const LoginStudent = () => {
                         <div className="Login_header" style={{marginLeft: '120px'}}>Create <br /> Account</div>
                         {/* <div className='Login_info'>*LASU Health Center</div> */}
                         <input 
-                                ref={matricNo} 
-                                className={`Login_text Login_inc2 ${!toggle && 'Login_rect2'}`}
+                                // ref={matricNo} 
+                                className={`Login_text Login_inc2 Login_rect2`}
                                 // onFocus={handle2}
                                 // onClick={handle2}
                                 type="text" 
                                 name="matricNo" placeholder='matric number' 
-                                value={matricNoStudent}
-                                onChange={(e) => setMatricNoStudent(e.target.value)}
+                                value={matricNumber}
+                                onChange={(e) => setmatricNumber(e.target.value)}
                         /> 
                         {/* <!-- Had to remove the type "password" due to the browser user credential's autofill--> */}
 
                         <input 
-                                ref={password} 
-                                className={`Login_text Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
+                                // ref={password} 
+                                className={`Login_text Login_pass Login_inc1 Login_rect1`} 
                                 // onFocus={handle1}
                                 // onClick={handle1}
                                 type="password" name="Password" placeholder='Password' 
                                 // style={{borderTop: "1px solid white"}}
-                                value={passwordStudent}
-                                onChange={(e) => setPasswordStudent(e.target.value)}
+                                value={password}
+                                onChange={(e) => setpassword(e.target.value)}
                         />
 
-                        <Link to="/student">
-                                <button className='Login button' onClick={() => handleSubmit}>CREATE</button>
-                        </Link>
+                        {/* <Link to="/student"> */}
+                                <button 
+                                        className='Login button' 
+                                        onClick={() => handleSubmit()}
+                                        disabled={
+                                                                       
+                                                matricNumber === '' 
+                                                || 
+                                                password === '' 
+                                                ?
+                                                true 
+                                                : 
+                                                false
+                                        }
+                                >CREATE</button>
+                        {/* </Link> */}
 
                         {/* <div className="Login_info_down">
                                 <div className='Login_info'>*If you have no record with health center</div>

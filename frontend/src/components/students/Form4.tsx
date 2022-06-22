@@ -83,22 +83,22 @@ export const Form4 = () => {
                                                         guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd
                                                         
                                                 }))} 
-                                                disabled={
+                                                // disabled={
                                                                        
-                                                        guardianName === '' 
-                                                        || 
-                                                        guardianRel === '' 
-                                                        || 
-                                                        guardianOffAdd === '' 
-                                                        || 
-                                                        guardianTelNum === '' 
-                                                        || 
-                                                        guardianResAdd === '' 
-                                                        ?
-                                                        true 
-                                                        : 
-                                                        false
-                                                }
+                                                //         guardianName === '' 
+                                                //         || 
+                                                //         guardianRel === '' 
+                                                //         || 
+                                                //         guardianOffAdd === '' 
+                                                //         || 
+                                                //         guardianTelNum === '' 
+                                                //         || 
+                                                //         guardianResAdd === '' 
+                                                //         ?
+                                                //         true 
+                                                //         : 
+                                                //         false
+                                                // }
                                         >next</button>
                                         
                                 {/* </Link> */}
