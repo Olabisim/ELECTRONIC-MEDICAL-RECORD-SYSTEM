@@ -2,12 +2,16 @@ import React from 'react';
 // import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './page/Home'
-import { Staff } from './page/staff/Staff'
 import { Login } from './page/Login'
 import { Stats } from './page/admin/Stats';
 import { Admin } from './page/admin/Home';
 import { AdminStudent } from './page/admin/Student';
 import { DefaultLogin } from './components/DefaultLogin';
+
+// STAFF
+
+import { Staff } from './page/staff/Staff'
+import { StaffRegister } from './page/staff/StaffRegister'
 
 // STUDENT 
 import { Student } from './page/student/Student'
@@ -62,7 +66,7 @@ function App() {
                                 {/* STAFF */}
 
                                 <Route path="/staff/login" element={<Login />} /> 
-                                <Route path="/staff/register" element={<Stats />} /> 
+                                <Route path="/staff/register" element={<StaffRegister />} /> 
                                 <Route path="/staff" element={<Staff />} /> 
 
                                 {/* STUDENT */}
