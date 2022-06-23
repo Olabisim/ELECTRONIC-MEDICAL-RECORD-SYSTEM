@@ -1,8 +1,28 @@
 
-
+import { useEffect, useState } from 'react'
 import '../../css/studenthome.css'
 
 export const Student = () => {
+
+        const [userDetails, setUserDetails ] = useState({})
+
+        useEffect(() => {
+
+                const items = JSON.parse(localStorage.getItem("user")!)
+
+                if(items) {
+                        setUserDetails(items)
+                }
+
+                console.log(items.surname)
+                console.log(typeof(items))
+
+                console.log(userDetails)
+                console.log(userDetails)
+                console.log(items)
+
+        }, [])
+
         return (
                 <div className="student_home main">
 
@@ -15,6 +35,9 @@ export const Student = () => {
                                         <div className="student_home navin">
 
                                                 <i className="fa fa-home" aria-hidden="true"></i>
+                                                <span>
+                                                        {/* {userDetails && userDetails?.surname } */}
+                                                </span>
                                                 <span>Home</span>
                                         </div>
 

@@ -64,6 +64,10 @@ export const LoginStudent = () => {
                 .then(res => res.json())
                 .then(data => {
                         console.log(data.message)
+                        console.log(data.data.user)
+
+                        localStorage.setItem("user", JSON.stringify(data.data.user))
+
                         navigate('/student')
                 })
                 .catch((err) => {
