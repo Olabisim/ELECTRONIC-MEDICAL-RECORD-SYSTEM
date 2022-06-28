@@ -67,29 +67,35 @@ const staffSchema = new Schema({
     select: false,
     minlength: [8, "password must be atleast 8 characters long"],
   },
-  passwordConfirm: {
-    type: String,
-    required: [true, "Enter password again to confirm"],
-    validate: {
-      validator: function (cPassword) {
-        return cPassword == this.password;
-      },
-      message: "Passwords don't match",
-    },
+  value: {
+    type: Number
   },
+  // passwordConfirm: {
+  //   type: String,
+  //   required: [true, "Enter password again to confirm"],
+  //   validate: {
+  //     validator: function (cPassword) {
+  //       return cPassword == this.password;
+  //     },
+  //     message: "Passwords don't match",
+  //   },
+  // },
   active: {
     type: Boolean,
     default: true,
     select: false,
   },
-  userType: {
+  status : {
     type: String,
-    enum: {
-      values: ["staff"],
-      message: "User has to be a staff",
-    },
-    default: "staff",
-  },
+  }
+  // userType: {
+  //   type: String,
+  //   enum: {
+  //     values: ["staff"],
+  //     message: "User has to be a staff",
+  //   },
+  //   default: "staff",
+  // },
 });
 
 // encrypt pword pre-save middleeware

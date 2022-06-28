@@ -7,7 +7,10 @@ import { useState } from 'react'
 export const Form1 = () => {
 
         const count = useAppSelector(state => state.staff.count)
+        // const staffData = useAppSelector(state => state.staff.staffData)
         
+        // const {surname, otherNames, yearOfAdmission, faculty, department, religion, telPhone} = staffData
+
         const dispatch = useAppDispatch()
 
         const [ surname, setSurname ] = useState<string>('')
@@ -80,6 +83,29 @@ export const Form1 = () => {
                                                 {/* </Link> */}
                                                 
                                                 {/* <Link to="/student/second"> */}
+                                                
+                                                {/* surname(pin):""
+                                                otherNames(pin):""
+                                                department(pin):""
+                                                religion(pin):""
+                                                telPhone(pin):""
+                                                date(pin):"2022-06-23T09:44:10.118Z"
+                                                homeAddress(pin):""
+                                                gender(pin):""
+                                                dateOfBirth(pin):"2022-06-23T09:44:10.118Z"
+                                                nationality(pin):""
+                                                ethnicGroup(pin):""
+                                                maritalStatus(pin):""
+                                                userType(pin):""
+                                                password(pin):"" 
+                                                
+                                                        const [ surname, setSurname ] = useState<string>('')
+                                                        const [ otherNames, setOtherName ] = useState<string>('')
+                                                        const [ dateOfBirth, setDateOfBirth ] = useState<string>('')
+                                                        const [ department, setDepartment ] = useState<string>('')
+                                                        const [ telPhone, settelPhone ] = useState<string>('')
+                                                        const [ religion, setReligion ] = useState<string>('')
+                                                */}
                                         
                                                         <button 
                                                                 className="stats button" 

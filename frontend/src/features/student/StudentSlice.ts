@@ -27,6 +27,7 @@ interface inst {
                 guardianRel: String,
                 userType: String,
                 password: String,
+                status: String,
         
                 nervousDisease:  Boolean,
                 chestLungsDisease: Boolean,
@@ -69,6 +70,7 @@ const initialState: inst = {
                 guardianRel: '',
                 userType: '',
                 password: '',
+                status: 'pending',
         
                 nervousDisease:  false,
                 chestLungsDisease: false,

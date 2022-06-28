@@ -144,6 +144,10 @@ const studentSchema = new Schema({
     minlength: [8, "Password must be atleast 8 characters long"],
     select: false,
   },
+  
+  status : {
+    type: String,
+  },
   active: {
     type: Boolean,
     default: true,

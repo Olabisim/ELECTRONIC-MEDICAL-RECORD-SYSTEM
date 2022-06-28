@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../../css/login.css'
-// import {Link} from 'react-router-dom'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
 
 export const LoginStudent = () => {
@@ -15,7 +14,7 @@ export const LoginStudent = () => {
         const {
                 surname, otherNames, yearOfAdmission, faculty, department, religion,
                 homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone,
-                guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd, dateOfBirth } = studentData
+                guardianName, guardianRel, guardianOffAdd, guardianTelNum, guardianResAdd, dateOfBirth, status } = studentData
 
         const dispatch = useAppDispatch()
         const navigate = useNavigate()
@@ -40,7 +39,8 @@ export const LoginStudent = () => {
                 guardianResAdd,
                 matricNumber,
                 password,
-                dateOfBirth
+                dateOfBirth,
+                status
         }
         
 

@@ -32,6 +32,7 @@ const studentSignup = async (req, res, next) => {
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
       healthHistory: req.body.healthHistory,
+      status: req.body.status,
     };
 
     // pick student reg data data body

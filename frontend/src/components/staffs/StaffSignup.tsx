@@ -11,7 +11,7 @@ export const StaffSignup = () => {
 
         
         const staffData = useAppSelector(state => state.staff.staffData)
-
+        
         const {
                 surname, otherNames, department, religion,
                 homeAddress, gender, nationality, ethnicGroup, maritalStatus, telPhone, dateOfBirth } = staffData
@@ -19,7 +19,7 @@ export const StaffSignup = () => {
         const dispatch = useAppDispatch()
         const navigate = useNavigate()
 
-        const studentRegData = {
+        const staffRegData = {
                 surname, 
                 otherNames, 
                 department, 
@@ -47,16 +47,19 @@ export const StaffSignup = () => {
                 headers: {
                         'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(studentRegData)
+                body: JSON.stringify(staffRegData)
 
         }
 
         const handleSubmit = () => {
-                fetch('http://localhost:7000/api/v1/studentqq/signup', options)
+                console.log('loading')
+                fetch('http://localhost:7000/api/v1/staff/signup', options)
                 .then(res => res.json())
                 .then(data => {
-                        console.log(data.message)
-                        navigate('/student')
+                        console.log(data.message) 
+                        console.log(data.data) 
+                        navigate('/staff')
+                        console.log('done')
                 })
                 .catch((err) => {
                         console.log(err)
