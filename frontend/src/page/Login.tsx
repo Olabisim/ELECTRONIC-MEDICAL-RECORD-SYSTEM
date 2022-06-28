@@ -1,31 +1,47 @@
 import React, {useRef, useState} from 'react'
 import '../css/login.css'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 
 export const Login = () => {
 
+
+        const navigate = useNavigate()
+
+        const [matric, setMatric] = useState<string>('')
+        const [pass, setPass] = useState<string>('')
+        
         const [toggle, setToggle] = useState<String>('rect2')
 
         const username = useRef<HTMLInputElement>(null)
         const password = useRef<HTMLInputElement>(null)
         const rect = useRef<SVGSVGElement>(null)
 
+        let data = {
+                matricNumber: matric,
+                password: pass 
+        }
+
+        const handleLogin = () => {
+                fetch('http://localhost:7000/api/v1/studentqq/login', {
+                        method: 'POST',
+                        headers: {
+                                'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                })
+                .then(res => res.json())
+                .then(data => {
+                        console.log(data)
+                        localStorage.setItem("student", JSON.stringify(data.data.student))
+                        navigate('/student')
+                })
+                .catch(err => console.log(err))
+
+        }
+
+        console.log(pass, "  ", matric)
+
         
-        const handle1 = () => {
-                
-                console.log(rect.current)
-                // console.log(rect.current.setAttribute)
-                // const { current } = rect;
-                setToggle('rect1')
-                // current.setAttribute("class", "rect2");
-        }
-
-        const handle2 = () => {
-                console.log("this is handle2")
-                // rect.setAttribute("class", "rect1");
-                setToggle('rect2')
-        }
-
         return(
                 <div className="Login_container_for_flex">
 
@@ -38,26 +54,24 @@ export const Login = () => {
                         <input 
                                 ref={username} 
                                 className={`Login_text Login_inc2 ${!toggle && 'Login_rect2'}`}
-                                onFocus={handle2}
-                                onClick={handle2}
+                                value={matric}
+                                onChange={e => setMatric(e.target.value)}
                                 type="text" 
-                                name="Username" placeholder='Username' 
-                                // value="" 
-                        /> 
-                        {/* <!-- Had to remove the type "password" due to the browser user credential's autofill--> */}
+                                placeholder='Username' 
+                        />
 
                         <input 
-                        ref={password} 
-                        className={`Login_text Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
-                        onFocus={handle1}
-                        onClick={handle1}
-                        type="password" name="Password" placeholder='Password' 
-                        // style={{borderTop: "1px solid white"}}
-                        // value="" 
+                                ref={password} 
+                                className={`Login_text Login_pass Login_inc1 ${toggle && 'Login_rect1'}`} 
+                                value={pass}
+                                onChange={e => setPass(e.target.value)}
+                                type="password" 
+                                name="Password" 
+                                placeholder='Password' 
                         />
 
                         <Link to="/home">
-                                <button className='Login button'>Sign In</button>
+                                <button className='Login button' onClick={() => handleLogin()} >Sign In</button>
                         </Link>
 
                         <div className="Login_info_down">
@@ -68,9 +82,6 @@ export const Login = () => {
                                 </Link>
 
                         </div>
-                        {/* <svg width="390" height="549" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" ref={rect} className={`${toggle}`} >
-                                <rect id='rect' className='Login_rect1'   x="45px"  y="300px"   rx="27" ry="27" width="300px" height="50px" style={{stroke: '#fff', strokeWidth: '1px', fill: 'blue'}} />
-                        </svg> */}
                 </div>
                 
                 </div>

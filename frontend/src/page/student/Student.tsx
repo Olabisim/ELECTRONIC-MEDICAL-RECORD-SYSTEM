@@ -2,13 +2,19 @@
 import { useEffect, useState } from 'react'
 import '../../css/studenthome.css'
 
+interface userDetails {
+        surname: String
+}
+
 export const Student = () => {
 
-        const [userDetails, setUserDetails ] = useState({})
+        const [userDetails, setUserDetails ] = useState<userDetails>({
+                surname: ""
+        })
 
         useEffect(() => {
 
-                const items = JSON.parse(localStorage.getItem("user")!)
+                const items = JSON.parse(localStorage.getItem("student")!)
 
                 if(items) {
                         setUserDetails(items)
@@ -36,7 +42,7 @@ export const Student = () => {
 
                                                 <i className="fa fa-home" aria-hidden="true"></i>
                                                 <span>
-                                                        {/* {userDetails && userDetails?.surname } */}
+                                                        {userDetails && userDetails?.surname }
                                                 </span>
                                                 <span>Home</span>
                                         </div>
