@@ -109,7 +109,7 @@ const studentLogin = async (req, res, next) => {
     });
 
     res.status(200).json({
-      status: "success",
+      status: "logged in successfully",
       token,
       data: {
         student,
